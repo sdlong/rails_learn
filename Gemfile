@@ -55,8 +55,6 @@ end
 
 gem "simple_form", "~> 3.0.0.rc" #幫助表單輸入用
 
-gem 'bootstrap-sass', '~> 3.0.3.0'
-
 gem "devise", "~> 3.2.2"
 
 gem "anjlab-bootstrap-rails", "2.3.1.2", :require => "bootstrap-rails"
