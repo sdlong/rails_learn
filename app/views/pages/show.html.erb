@@ -1,0 +1,31 @@
+<div class="span8 offset2">
+
+    <div class="group">
+        <%= link_to("Edit", edit_page_path(@page) , :class => "btn btn-large btn-primary pull-right" ) %>
+
+   </div>
+
+<h2> <%= @page.title %> </h2>
+<p> <%= @page.link %> </p>
+<p> <%= @page.description %> </p>
+<p> <%= @page.messenge %> </p>
+
+	<hr>
+
+
+	<%= link_to("New Post", new_page_post_path(@page) , :class => "btn btn btn-warning pull-right")%>
+
+<h4>推文留言</h4>
+
+	<table class="table">
+		
+		<tbody>
+			<% @posts.each do |post| %>
+		<tr>
+			<td> <%= post.content %> </td>
+			<td> <%= link_to("Edit", edit_page_post_path(post.page, post), :class => "btn btn-mini")%> <%= link_to("Delete", page_post_path(post.page, post), :class => "btn btn-mini", :method => :delete, :confirm => "Are you sure?" ) %> </td>
+		</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

@@ -4,6 +4,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :link
       t.string :title
       t.text :description
+      t.text :messenge
 
       t.timestamps
     end

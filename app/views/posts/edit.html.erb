@@ -1,0 +1,14 @@
+<h3 class="text-center">修改留言</h3>
+
+<div class="span6 offset3">
+
+    <%= simple_form_for [@page, @post] do |f| %>
+        <%= f.input :content, :input_html => { :class => "input-xxlarge"} %>
+        
+
+    <div class="form-action">
+        <%= f.submit "Submit", :disable_with => 'Submiting...', :class => "btn btn-primary" %>
+    </div>
+    
+    <% end %>
+</div>

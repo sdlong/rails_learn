@@ -2,9 +2,11 @@ RailsLearn::Application.routes.draw do
 
   get "home" => "home#index"
 
-  root to: "home#index"
-  
-  resources :pages
+  root to: "pages#index"
+
+  resources :pages do
+    resources :posts
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -54,7 +54,7 @@ end
 # 以下是自己添加的
 
 gem "simple_form", "~> 3.0.0.rc" #幫助表單輸入用
-
+gem "better_errors", "~> 0.9.0" #錯誤訊息幫手
 gem "devise", "~> 3.2.2"
 
 gem "anjlab-bootstrap-rails", "2.3.1.2", :require => "bootstrap-rails"
