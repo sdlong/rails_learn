@@ -1,17 +1,15 @@
 class PostsController < ApplicationController
+	before_action :find_page
 
 	def new
-		@page = Page.find(params[:page_id])
 		@post = @page.posts.build
 	end
 
 	def edit
-		@page = Page.find(params[:page_id])
 		@post = @page.posts.find(params[:id])
 	end
 
 	def create
-		@page = Page.find(params[:page_id])
 		@post = @page.posts.new(post_params)
 
 		if @post.save
@@ -22,7 +20,6 @@ class PostsController < ApplicationController
  	end
 
  	def update
- 		@page = Page.find(params[:page_id])
  		@post = @page.posts.find(params[:id])
 
  		if @post.update(post_params)
@@ -33,7 +30,6 @@ class PostsController < ApplicationController
  	end
 
  	def destroy
- 		@page = Page.find(params[:page_id])
  		@post = @page.posts.find(params[:id])
 
  		@post.destroy
@@ -45,5 +41,9 @@ class PostsController < ApplicationController
 
 	def post_params
 		params.require(:post).permit(:content)
+	end
+
+	def find_page
+		@page = Page.find(params[:page_id])
 	end
 end
