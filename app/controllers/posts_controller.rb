@@ -8,11 +8,12 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		@post = @page.posts.find(params[:id])
+		@post = current_user.posts.find(params[:id])
 	end
 
 	def create
 		@post = @page.posts.new(post_params)
+		@post.author = current_user
 
 		if @post.save
 			redirect_to page_path(@page)
@@ -22,7 +23,7 @@ class PostsController < ApplicationController
  	end
 
  	def update
- 		@post = @page.posts.find(params[:id])
+ 		@post = current_user.posts.find(params[:id])
 
  		if @post.update(post_params)
  			redirect_to page_path(@page)
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
  	end
 
  	def destroy
- 		@post = @page.posts.find(params[:id])
+ 		@post = current_user.posts.find(params[:id])
 
  		@post.destroy
 

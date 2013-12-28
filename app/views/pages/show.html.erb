@@ -1,14 +1,16 @@
 <div class="span8 offset2">
 
     <div class="group">
+    	<% if current_user && @page.editable_by?(current_user) %>
         <%= link_to("Edit", edit_page_path(@page) , :class => "btn btn-large btn-primary pull-right" ) %>
+        <% end %>
 
    </div>
 
-<h2> <%= @page.title %> </h2>
-<p> <%= @page.link %> </p>
-<p> <%= @page.description %> </p>
-<p> <%= @page.messenge %> </p>
+		<h2> <%= @page.title %> </h2>
+		<p> <%= @page.link %> </p>
+		<p> <%= @page.description %> </p>
+		<p> <%= @page.messenge %> </p>
 
 	<hr>
 
@@ -22,9 +24,21 @@
 		<tbody>
 			<% @posts.each do |post| %>
 		<tr>
-			<td> <%= post.content %> </td>
-			<td> <%= link_to("Delete", page_post_path(post.page, post), :class => "btn btn-mini pull-right", :method => :delete, :confirm => "Are you sure?" ) %>
-				 <%= link_to("Edit", edit_page_post_path(post.page, post), :class => "btn-edit btn btn-mini pull-right")%>  </td>
+			<td> 
+				<span clas="author"> 
+					<strong> 
+						<%= post.author.name %> 表示：
+					</strong>
+				</span>
+				<p>
+					<%= post.content %>
+				</p>
+			</td>
+			<td> 
+				 <% if current_user && post.editable_by?(current_user) %>
+				 <%= link_to("Delete", page_post_path(post.page, post), :class => "btn btn-mini pull-right", :method => :delete, :confirm => "Are you sure?" ) %>
+				 <%= link_to("Edit", edit_page_post_path(post.page, post), :class => "btn-edit btn btn-mini pull-right")%>  
+				 <% end %></td>
 		</tr>
 		<% end %>
 		</tbody>
