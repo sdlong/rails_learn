@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131227233734) do
+ActiveRecord::Schema.define(version: 20131228024032) do
 
   create_table "pages", force: true do |t|
     t.string   "link"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20131227233734) do
     t.text     "messenge"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "posts", force: true do |t|
