@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
 	before_action :find_page
 
+	before_action :login_required, :only => [:new, :create, :edit,:update,:destroy]
+	
 	def new
 		@post = @page.posts.build
 	end
