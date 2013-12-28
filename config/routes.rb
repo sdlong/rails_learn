@@ -1,5 +1,6 @@
 RailsLearn::Application.routes.draw do
 
+  devise_for :users
   get "home" => "home#index"
 
   root to: "pages#index"

@@ -20,8 +20,16 @@
                 <a class="brand" href="/">RailsLearn</a>
                 <div class="nav-collapse collapse">
                     <p class="nav-account navbar-text pull-right">
-                        Logged in as <a href="#" class="navbar-link">Username</a>
+                        <% if user_signed_in? %>
+                        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> | 
+                        <a href="#" class="navbar-link"><strong><%= current_user.email %></strong></a>
+                    <% else %>
+                    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+                    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                    <% end %>
                     </p>
+
                     <ul class="nav">
                         <li><a href="home">Home</a></li>
                         <li><a href="#about">About</a></li>
@@ -35,7 +43,15 @@
 
     <div class="container">
 
-		<%= yield %>
+    <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+	
+    	<%= yield %>
 
 	</div>
     <%= javascript_include_tag "application"  %>
