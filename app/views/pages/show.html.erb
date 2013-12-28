@@ -23,7 +23,8 @@
 			<% @posts.each do |post| %>
 		<tr>
 			<td> <%= post.content %> </td>
-			<td> <%= link_to("Edit", edit_page_post_path(post.page, post), :class => "btn btn-mini pull-right")%> <%= link_to("Delete", page_post_path(post.page, post), :class => "btn btn-mini pull-right", :method => :delete, :confirm => "Are you sure?" ) %> </td>
+			<td> <%= link_to("Delete", page_post_path(post.page, post), :class => "btn btn-mini pull-right", :method => :delete, :confirm => "Are you sure?" ) %>
+				 <%= link_to("Edit", edit_page_post_path(post.page, post), :class => "btn-edit btn btn-mini pull-right")%>  </td>
 		</tr>
 		<% end %>
 		</tbody>

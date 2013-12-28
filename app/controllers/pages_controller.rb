@@ -16,18 +16,21 @@ class PagesController < ApplicationController
 	end
 
 	def edit
-		@page = Page.find(params[:id])
+		@page = current_user.pages.find(params[:id])
 	end
 
 	def create
-		@page = Page.new(page_params)
-		@page.save
+		@page = current_user.pages.build(page_params)
 
-		redirect_to pages_path
+		if @page.save
+			redirect_to pages_path
+		else
+			render :new
+		end
 	end
 
 	def update
-		@page = Page.find(params[:id])
+		@page = current_user.pages.find(params[:id])
 
 		if @page.update(page_params)
 			redirect_to page_path(@page)
@@ -37,7 +40,7 @@ class PagesController < ApplicationController
 	end
 
 	def destroy
-		@page = Page.find(params[:id])
+		@page = current_user.pages.find(params[:id])
 
 		@page.destroy
 
