@@ -1,0 +1,27 @@
+<h1>Links#new</h1>
+<p>Find me in app/views/links/new.html.erb</p>
+
+<%= simple_form_for @link do |f| %>
+	<%= f.input :content, :input_html => {:id => "url"} %>
+	<div class="selector-wrapper"></div>
+	 <%= f.button :submit, "送出", :disable_with => "送出中...", :class => "btn btn-primary btn-large" %>
+<% end %>
+
+
+<form>
+
+</form>
+
+<script>
+    // Set up preview.
+    $('#url').preview({key:'527e94312ae44c169eb5b9cceab5d43f'})
+
+    // On submit add hidden inputs to the form.
+    $('form').on('submit', function(){
+      $(this).addInputs($('#url').data('preview'));
+      return true;
+    });
+
+
+</script>
+
