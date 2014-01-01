@@ -5,6 +5,7 @@ RailsLearn::Application.routes.draw do
 
   root to: "pages#index"
 
+
   resources :pages do
     resources :posts
   end

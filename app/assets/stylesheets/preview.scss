@@ -1,0 +1,220 @@
+
+.thumb{
+  float: left;
+  margin:0 10px 0 0;
+  position: relative;
+  width:100px;
+  .items{
+    position: relative;
+    overflow:hidden;
+    padding: 0px;
+    height:100px;
+    width: 100px;
+    .images {
+      position:absolute;
+      width:300em;
+      margin: 0px;
+      padding: 0px;
+      left:0px;
+      li{
+        list-style:none;
+        float:left;
+        margin: 0px;
+        padding: 0px;
+        width: 100px;
+        height: 100px;
+      }
+      img{
+        max-width:100px;
+        max-height:100px;
+      }
+    }
+  }
+  .controls {
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    position: absolute;
+    height: 16px;
+    z-index: 1;
+    background-color:#222;
+    opacity:0.5;
+    .left, .right, .nothumb {
+      display:block;
+      position:absolute;
+      top:2px;
+      color: #fff;
+      &:hover{
+        text-decoration:none;
+      }
+    }
+    .nothumb{
+      right: 2px;
+      font-weight: bold;
+      top: 1px;
+    }
+    .left {
+      left:2px;
+    }
+    .right{
+      left:16px;
+    }
+  }
+  .nothumb{
+    right: 2px;
+    font-weight: bold;
+    top: 1px;
+  }
+}
+.selector {
+  margin: 10px auto;
+  position:relative;
+  min-height: 85px;
+
+
+  input {
+    width: 420px;
+  }
+  textarea {
+    width: 420px;
+    margin: 5px 0;
+  }
+  .media {
+    iframe, object, embed, img {
+      margin: 10px auto;
+      display: block;
+    }
+    img {
+      max-width: 500px;
+    }
+  }
+
+
+  .attributes {
+    a {
+      text-decoration:none;
+      &.title, &.description{
+        &:hover{
+          text-decoration:none;
+          background-color:#FFF6D9;
+        }
+      }
+      &.description{
+       color:#000;
+      }
+      &.title{
+        margin: 0 0 5px;
+        display: block;
+      }
+    }
+
+    .meta {
+      display: block;
+      .favicon{
+        width:16px;
+        height:16px;
+        vertical-align: middle;
+        margin: 0 3px 0 0;
+      }
+      .provider {
+
+      }
+    }
+
+  }
+  .action{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display:none;
+    .close {
+
+    }
+  }
+}
+
+.loading {
+  display:none;
+  img{
+    display:block;
+    margin : 10px auto;
+  }
+}
+
+.item {
+  margin : 10px 0;
+  border-top: 1px solid #DDD;
+  padding: 10px 0;
+
+  &.video, &.rich, &.photo {
+    .media {
+      iframe, object, embed, img {
+        margin: 10px auto;
+        display: block;
+      }
+      img {
+        max-width: 560px;
+      }
+    }
+    .title {
+      margin: 10px 0;
+      display: block;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+    }
+  }
+
+  .status{
+    line-height: 1.2em;
+    margin: 10px 0;
+    padding: 5px;
+  }
+  .thumbnail {
+    margin: 10px 10px 10px 5px;
+    width: 105px;
+    float: left;
+    a {
+      display: table-cell;
+      width: 100px;
+      height: 75px;
+      overflow: hidden;
+      background-color: #DDD;
+      vertical-align: middle;
+      position:relative;
+      text-align: center;
+    }
+    img {
+      max-width: 100px;
+      vertical-align:middle;
+      max-height: 75px;
+    }
+    &.video, &.rich {
+      .overlay {
+        background-image: url(../images/play.png);
+        width: 26px;
+        height: 25px;
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+      }
+    }
+  }
+  .attributes {
+    background-color: #EFEFEF;
+    padding: 5px;
+  }
+
+  .meta {
+    display: block;
+    .favicon{
+      width:16px;
+      height:16px;
+      vertical-align: middle;
+      margin: 0 3px 0 0;
+    }
+    .provider {
+
+    }
+  }
+}
