@@ -1,7 +1,9 @@
- <h1 class="text-center"><%= @link.title %></h1>
 
+<div class="hero-unit">
+ <h1 class="text-center"><%= @link.title %></h1>
+<p class="text-center"><%= @link.intro %></p>
+</div>
     <div class="span6 offset3 page_index_titles">
-        <h4> sdlong 的強烈推薦： &nbsp;&nbsp;&nbsp;<%= @link.intro %></h4>
             <div class="span6"><div class="thumb">
                 <div class="items">
                     <ul class="images"><li><img src="<%= @link.thumbnail_url %>"></li></ul>
@@ -15,8 +17,8 @@
     </div>
     <div class="span6 offset3"><hr></div>
 
-    <div class="span6 offset3">
+    <div class="span8 offset2">
     <h2 text="center">推薦原因</h2>
 
-    <p><%= @link.messenge %></p>
+    <p class="page_text"><%= @link.messenge %></p>
     </div>
