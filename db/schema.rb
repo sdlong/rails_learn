@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140101222243) do
     t.string   "html"
     t.string   "width"
     t.string   "height"
+    t.string   "favicon_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

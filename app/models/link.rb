@@ -13,6 +13,7 @@ class Link < ActiveRecord::Base
  
     response_data = embedly_obj.marshal_dump
  
+    link.favicon_url       =  response_data[:favicon_url]
     link.title             =  response_data[:title]
     link.author_name       =  response_data[:author_name]
     link.author_url        =  response_data[:author_url]
@@ -25,7 +26,7 @@ class Link < ActiveRecord::Base
     link.html              =  response_data[:html]
     link.width             =  response_data[:width]
     link.height            =  response_data[:height]
-    link.favicon_url       =  response_data[:favicon_url]
+    
  
     link.save
   end
