@@ -1,22 +1,49 @@
-<div class="span8 offset2">
+<div class="hero-unit">
+	<h1 class="text-center"><%= @page.title %></h1>
+	<p class="text-center"><%= @page.intro %></p>
+</div>
 
-    <div class="group">
-    	<% if current_user && @page.editable_by?(current_user) %>
-        <%= link_to("Edit", edit_page_path(@page) , :class => "btn btn-large btn-primary pull-right" ) %>
-        <% end %>
+<div class="span10 offset1">
+	<div class="button_grup pull-right">
+		<% if current_user && @page.editable_by?(current_user) %>
+	  		<%= link_to("Edit", edit_page_path(@page) , :class => "btn btn-info btn-large" )%>
+	  	<% end %>
+	  	<%= link_to("Back", pages_path , :class => "btn btn-large btn-success" )%>
+  	</div>
+</div>
 
-   </div>
+<!-- page的部分   -->
 
-		<h2> <%= @page.title %> </h2>
-		<p> <%= @page.link %> </p>
-		<p> <%= @page.description %> </p>
-		<p> <%= @page.messenge %> </p>
+	<div class="span6 span6 offset3 page_index_titles">
+		<div class="thumb">
+	 		<div class="items">
+				<ul class="images"><li><img src="<%= @page.thumbnail_url %>"></li></ul>
+			</div>
+		</div>
+		<div class="attributes">
+			<a class="index-title" href="<% @page.provider_url %>" contenteditable="true"><%= @page.title %></a>
+			<p class="index-p muted"><%= @page.description %></p>
+		</div>
+	</div>
 
-	<hr>
+
+<div class="span6 offset3"><hr></div>
+
+<div id="page_messenge" class="span6 offset3">
+	<h2 class="text-center page_show_titles">推薦原因</h2>
+	<p class="page_text page_index_titles"><%= @page.messenge %></p>
+</div>
+
+<div class="span6 offset3"><hr></div>
+
+<!-- end - page的部分   -->
 
 
-	<%= link_to("New Post", new_page_post_path(@page) , :class => "btn btn btn-warning pull-right")%>
+<div class="span6 offset3">
+	<%= link_to("New Post", new_page_post_path(@page) , :class => "btn btn-warning pull-right")%>
+	</div>
 
+<div class="span6 offset3">
 <h4>推文留言</h4>
 
 	<table class="table">
@@ -43,4 +70,5 @@
 		<% end %>
 		</tbody>
 	</table>
+</div>
 </div>

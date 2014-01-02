@@ -1,38 +1,40 @@
 <div class="hero-unit">
-	<h1 class="text-center">Rails-Learn</h1>
-	<p class="text-center">中文界 Ruby & Ruby on Rails 資訊交流中心 </p>
+    <h1 class="text-center">Rails-Learn</h1>
+    <p class="text-center">中文界 Ruby & Ruby on Rails 資訊交流中心 </p>
 </div>
 
 <div class="span8 offset2">
     
-    <div class="group">
-        <%= link_to("New Page", new_page_path , :class => "btn btn-large btn-primary pull-right" ) %>
+    <div class="button_group pull-right">
+        <%= link_to("New Page", new_page_path , :class => "btn btn-large btn-primary " ) %>
     </div>
+</div>
  
-    <h3></h3>
-    <table class="table">
-        <thead>
-            <tr>
-                <td> 標題 </td>
-                <td> 敘述 </td>
-                <td> 作者 </td>
-            </tr>
-        </thead>
 
-    <tbody>
-        <% @pages.each do |page| %>
-            <tr>
-                <td> <%= link_to(page.title, page_path(page)) %> </td>
-                <td> <%= page.description %> </td>
-                <td> <%= page.owner.name %></td>
-                <td> 
-                     <% if current_user && page.editable_by?(current_user) %>
-                     <%= link_to("Delete", page_path(page), :class => "btn btn-mini pull-right", :method => :delete, :confirm => "Are you sure?" ) %>
-                     <%= link_to("Edit", edit_page_path(page), :class => "btn-edit btn btn-mini pull-right" ) %></td>
-                     <% end %>
-            </tr>
-        <% end %>
-    </tbody>
-    </table>
+<% @pages.each do |page| %>
+    <div class="span6 offset3 page_index_titles">
+        <h4> sdlong 的強烈推薦： &nbsp;&nbsp;&nbsp;<%= page.intro %></h4>
+            <div class="span6"><div class="thumb">
+                <div class="items">
+                    <ul class="images"><li><img src="<%= page.thumbnail_url %>"></li></ul>
+                </div></div>
+
+                <div class="attributes">
+                    <a class="index-title" href="<% page.provider_url %>" contenteditable="true"><%= page.title %></a>
+                    <p class="index-p muted"><%= page.description %></p>
+                </div>
+
+                <div class="button_group pull-right">
+                    <% if current_user && page.editable_by?(current_user) %>
+                      <%= link_to("Edit", edit_page_path(page), :class => "btn btn btn-info")%>
+                      <%= link_to("Delete", page_path(page), :class => "btn btn-danger", :method => :delete, :confirm => "Are you sure?" ) %> 
+                      <% end %>
+                    <a href="<%= page_path(page) %>"><div class="btn btn-success">Read more &gt;</div></a>
+                </div>
+            </div>
+    </div>
+    <div class="span6 offset3"><hr></div>
+<% end %>
+
 
 </div>
