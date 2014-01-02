@@ -2,7 +2,7 @@ class CreateLinks < ActiveRecord::Migration
   def change
     create_table :links do |t|
       t.string :content
-	  t.string :title
+	    t.string :title
       t.string :type
       t.string :author_name
       t.string :author_url
@@ -15,6 +15,7 @@ class CreateLinks < ActiveRecord::Migration
       t.string :html
       t.string :width
       t.string :height
+      t.string :favicon_url
 
       t.timestamps
     end

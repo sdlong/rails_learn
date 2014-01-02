@@ -1,2 +1,35 @@
-<h1>Links#index</h1>
-<p>Find me in app/views/links/index.html.erb</p>
+<div class="hero-unit">
+	<h1 class="text-center">Rails-Learn</h1>
+	<p class="text-center">中文界 Ruby & Ruby on Rails 資訊交流中心 </p>
+</div>
+
+<div class="span8 offset2">
+    
+    <div class="group">
+        <%= link_to("New Page", new_page_path , :class => "btn btn-large btn-primary pull-right" ) %>
+    </div>
+ 
+    <h3></h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> 標題 </td>
+                <td> 敘述 </td>
+                <td> 作者 </td>
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @links.each do |link| %>
+            <tr>
+                <td> <%= link.content %> </td>
+                <td> <%= link.id %> </td>
+                <td> </td>
+                <td> 
+
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+</div>

@@ -61,3 +61,6 @@ gem "bootstrap_helper", ">= 4.2.2.1"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "auto-facebook", "0.42"
+
+# embedly
+gem "embedly", "~> 1.8.0"

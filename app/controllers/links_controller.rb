@@ -18,14 +18,14 @@ class LinksController < ApplicationController
 	end
 
 	def create
-		@link = Link.new(link_params)
+    @link = Link.new(link_params)
 
-		if @link.save
-			redirect_to links_path
-		else
-			render :new
-		end
-	end
+    if @link.save
+        redirect_to root_path
+    else
+        render :new
+    end
+end
 
 	def update
 		@link = Link.find(params[:id])
@@ -48,7 +48,9 @@ class LinksController < ApplicationController
 	private
 
 	def link_params
-		params.require(:link).permit(:content, :title, :type, :author_name, :author_url, :provider_name, :provider_url, :description, :thumbnail_url, :thumbnail_width, :thumbnail_height, :html, :width, :height)
-		
+
+		params_to_merge = params.select { |k, v| }
+		params.require(:link).permit(:content).merge(params_to_merge)
+	
 	end
 end
