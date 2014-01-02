@@ -1,3 +1,66 @@
+.page_index_titles{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.index-title {
+  font-size: 18px;
+}
+
+.index-p {
+  margin-top: 10px;
+}
+
+#page_input {
+  margin-top: 40px; 
+  width: 450px;
+
+  .form-area {
+    margin-top: 50px;
+  }
+
+  textarea {
+    height: 200px;
+  }
+  label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  
+    .label-top{
+      margin-top: 20px;
+    }
+  }
+
+  .new_page_form {
+  height: 130px;
+  }
+
+  .page_form-control {
+    width: 430px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    margin-right: 50px;
+  }
+
+
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+
+#page_input {
+  margin-left: 150px;
+}
+}
+
+@media (max-width: 767px){
+
+#page_input {
+  margin-left: 60px;
+}
+}
+
 
 .thumb{
   float: left;

@@ -7,6 +7,7 @@ class Link < ActiveRecord::Base
     link = self
  
     urls = [content]
+
     embedly_api = Embedly::API.new(:key => '527e94312ae44c169eb5b9cceab5d43f')
     embedly_objs = embedly_api.oembed(:urls => urls)
     embedly_obj = embedly_objs[0]

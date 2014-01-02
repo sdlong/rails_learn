@@ -428,11 +428,6 @@ var vsprintf = function(fmt, argv) {
     // add the thumbnail controls.
     if (images !== ''){
       images = ['<div class="thumb">',
-        '<div class="controls">',
-          '<a class="left" href="#">&#9664;</a>',
-          '<a class="right" href="#">&#9654;</a>',
-          '<a class="nothumb" href="#">&#10005;</a>',
-        '</div>',
         '<div class="items">',
           '<ul class="images">',
             images,

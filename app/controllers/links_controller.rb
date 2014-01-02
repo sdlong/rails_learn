@@ -10,7 +10,6 @@ class LinksController < ApplicationController
 
 	def show
 		@link = Link.find(params[:id])
-		@posts = @link.posts
 	end
 
 	def edit
@@ -18,14 +17,14 @@ class LinksController < ApplicationController
 	end
 
 	def create
-    @link = Link.new(link_params)
+	    @link = Link.new(link_params)
 
-    if @link.save
-        redirect_to links_path
-    else
-        render :new
-    end
-end
+	    if @link.save
+	        redirect_to links_path
+	    else
+	        render :new
+	    end
+	end
 
 	def update
 		@link = Link.find(params[:id])
@@ -49,8 +48,6 @@ end
 
 	def link_params
 
-		params_to_merge = params.select { |k, v| }
-		params.require(:link).permit(:content).merge(params_to_merge)
-	
+		params.require(:link).permit(:content, :intro, :messenge)
 	end
 end

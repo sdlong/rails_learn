@@ -1,2 +1,22 @@
-<h1>Links#show</h1>
-<p>Find me in app/views/links/show.html.erb</p>
+ <h1 class="text-center"><%= @link.title %></h1>
+
+    <div class="span6 offset3 page_index_titles">
+        <h4> sdlong 的強烈推薦： &nbsp;&nbsp;&nbsp;<%= @link.intro %></h4>
+            <div class="span6"><div class="thumb">
+                <div class="items">
+                    <ul class="images"><li><img src="<%= @link.thumbnail_url %>"></li></ul>
+                </div></div>
+
+                <div class="attributes">
+                    <a class="index-title" href="<% @link.provider_url %>" contenteditable="true"><%= @link.title %></a>
+                    <p class="index-p muted"><%= @link.description %></p>
+                </div>
+            </div>
+    </div>
+    <div class="span6 offset3"><hr></div>
+
+    <div class="span6 offset3">
+    <h2 text="center">推薦原因</h2>
+
+    <p><%= @link.messenge %></p>
+    </div>

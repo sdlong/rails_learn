@@ -1,12 +1,19 @@
-<h1>Links#new</h1>
-<p>Find me in app/views/links/new.html.erb</p>
 
-<%= simple_form_for @link do |f| %>
-	<%= f.input :content, :input_html => {:id => "url"} %>
-	<div class="selector-wrapper"></div>
-	 <%= f.button :submit, "送出", :disable_with => "送出中...", :class => "btn btn-primary btn-large" %>
-<% end %>
 
+<div id="page_input" class="offset3">
+  <h1 class="text-center">新文章</h1>
+  <div class="form-area">
+      <%= simple_form_for @link do |f| %>
+      	<%= f.input :content, label: '請輸入推薦的網址',label_html: { class: 'label-top text-center' } ,:autofocus => true, :input_html => {:id => "url", :class => "page_form-control"} %>
+          <div class="new_page_form">
+        	 <div class="selector-wrapper"></div>
+          </div>
+        <%= f.input :intro, label: '請用一句話介紹他',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
+        <%= f.input :messenge, label: '詳細簡介',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
+      	<%= f.button :submit, "送出", :disable_with => "送出中...", :class => "btn btn-primary btn-large pull-right" %>
+      <% end %>
+  </div>
+</div>
 
 <form>
 

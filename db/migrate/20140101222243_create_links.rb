@@ -1,8 +1,9 @@
 class CreateLinks < ActiveRecord::Migration
   def change
     create_table :links do |t|
-      t.string :content
-	    t.string :title
+      
+      # for jquery preview
+	  t.string :title
       t.string :type
       t.string :author_name
       t.string :author_url
@@ -16,6 +17,11 @@ class CreateLinks < ActiveRecord::Migration
       t.string :width
       t.string :height
       t.string :favicon_url
+
+      # for page
+      t.string :content
+      t.string :intro
+      t.text :messenge
 
       t.timestamps
     end

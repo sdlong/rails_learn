@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(version: 20140101222243) do
 
   create_table "links", force: true do |t|
-    t.string   "content"
     t.string   "title"
     t.string   "type"
     t.string   "author_name"
@@ -29,6 +28,9 @@ ActiveRecord::Schema.define(version: 20140101222243) do
     t.string   "width"
     t.string   "height"
     t.string   "favicon_url"
+    t.string   "content"
+    t.string   "intro"
+    t.text     "messenge"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
