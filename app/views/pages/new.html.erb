@@ -7,7 +7,7 @@
         	 <div class="selector-wrapper"></div>
           </div>
         <%= f.input :intro, label: '請用一句話介紹他',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
-        <%= f.input :messenge, label: '詳細簡介',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
+        <%= f.input :messenge, as: :text, label: '詳細簡介',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
       	<%= f.button :submit, "送出", :disable_with => "送出中...", :class => "btn btn-primary btn-large pull-right" %>
       <% end %>
   </div>
