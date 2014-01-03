@@ -3,9 +3,9 @@
     <p class="text-center">中文界 Ruby & Ruby on Rails 資訊交流中心 </p>
 </div>
 
-<div class="span8 offset2">
+<div class="span8 offset2 button_group ">
     
-    <div class="button_group pull-right">
+    <div class="pull-right">
         <%= link_to("New Page", new_page_path , :class => "btn btn-large btn-primary " ) %>
     </div>
 </div>
@@ -13,7 +13,7 @@
 
 <% @pages.each do |page| %>
     <div class="span6 offset3 page_index_titles">
-        <h4> 推薦此網站： &nbsp;&nbsp;&nbsp;<%= page.intro %></h4>
+        <h4> 推薦此網站：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= page.intro %></h4>
             <div class="span6"><div class="thumb">
                 <div class="items">
                     <ul class="images"><li><img src="<%= page.thumbnail_url %>"></li></ul>
@@ -23,15 +23,16 @@
                     <a class="index-title" href="<% page.provider_url %>" contenteditable="true"><%= page.title %></a>
                     <p class="index-p muted"><%= page.description %></p>
                 </div>
-
-                <div class="button_group pull-right">
+           </div>
+    </div>
+    <div class="span6 offset3 button_group">
+                    <div class="button_group pull-right">
                     <% if current_user && page.editable_by?(current_user) %>
                       <%= link_to("Edit", edit_page_path(page), :class => "btn btn btn-info")%>
                       <%= link_to("Delete", page_path(page), :class => "btn btn-danger", :method => :delete, :confirm => "Are you sure?" ) %> 
                       <% end %>
                     <a href="<%= page_path(page) %>"><div class="btn btn-success">Read more &gt;</div></a>
                 </div>
-            </div>
     </div>
     <div class="span6 offset3"><hr></div>
 <% end %>

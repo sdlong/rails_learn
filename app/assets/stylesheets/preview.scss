@@ -14,7 +14,6 @@
 
 .page_index_titles{
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .index-title {
@@ -69,6 +68,10 @@
 }
 
 @media (max-width: 767px){
+
+.button_group {
+  height: 40px;
+}
 
 #page_input {
   margin-left: 60px;
