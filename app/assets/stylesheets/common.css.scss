@@ -9,21 +9,84 @@
 /* -----SUSY setting----- */
 
 $total-columns  : 12;
-$column-width   : 100px;
+$column-width   : 60px;
 $gutter-width   : 20px;
 $grid-padding   : 10px;
 
-$pad: 768px 12;
-$desktop: 1000px 12;
+	/* 以上是用來規劃基本格線設定 */
+
+
+$phone: 320px 6 480px;
+$pad: 12 1024px;
+$desktop: 1025px 18;
+
+/* ----- end SUSY setting----- */
+
+
+/* ----- color setting----- */
+$gray-blue: #6D8191;
+$deep-blue: #2C343B;
+$sign-red: #C44741;
+$light-brown: #E5E1D1;
+
+	/* ----- 灰階設定----- */
+$black: #000000;
+$gray-9: #333333;
+$gray-8: #4D4D4D;
+$gray-7: #666666;
+$gray-6: #808080;
+$gray-5: #999999;
+$gray-4: #B3B3B3;
+$gray-3: #CCCCCC;
+$gray-2: #E6E6E6;
+$gray-1: #F2F2F2;
+$white: #ffffff;
+
+
+/* ----- end color setting----- */
+
+
+
+
+
 
 
 /* Layout */
 
 .susy_container {
-  @include container($total-columns, $pad, $desktop);
-
-
+  @include container($total-columns, $phone,  $pad,  $desktop);
+  @include susy-grid-background;  //if need watch grid
 }
+
+// 修改 Bootstap內建樣式，解決格式跑掉的問題 
+@media (max-width: 320px) {
+	body {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.navbar-fixed-top {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.navbar-fixed-top {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+// end 修改 Bootstap內建樣式 
+
+.word-block {
+	 display: inline-block;
+}
+
 
 
 
@@ -59,3 +122,157 @@ h1, h2, h3, h4, h5, h6 {
     	text-align: center;
     }
 }
+
+/* End Layout */
+
+
+/* For edit landing page */
+
+.logo_btn {
+
+		@include at-breakpoint ($desktop) {
+			padding: 18px 40px;
+			font-size: 40px;
+			@include border-radius(10px)
+		}
+
+		@include at-breakpoint ($pad) {
+			padding: 14px 32px;
+			font-size: 30px;
+			@include border-radius(10px)
+		}
+
+		@include at-breakpoint ($phone) {
+			padding: 11px 19px;
+			font-size: 17.5px;
+			@include border-radius(6px)
+		}
+	}
+
+#home-logo {
+	margin-bottom: 30px;
+}
+
+#landing-introdution {
+
+	margin-bottom: 50px;
+
+	h1 {
+		margin: 50px 0px 50px 0px;
+	}
+
+	.heading1 {
+			display: block;
+			position: static;
+		@include at-breakpoint ($desktop) {
+			@include span-columns(4,12);
+		}
+
+		@include at-breakpoint ($pad) {
+			@include span-columns(4,12);
+		}
+
+		@include at-breakpoint ($phone) {
+			@include span-columns(12,12);
+		}
+
+
+		background-color: $light-brown;
+		padding:50px 0px 50px 0px; 
+		margin-bottom: 30px;
+
+		h2 {
+			margin-bottom: 0px;
+			@include at-breakpoint ($phone) {
+				font-size: 24px;
+			}
+		}
+
+		.text-fix {
+			@include at-breakpoint ($phone) {
+				font-size: 21px;
+			}
+		}
+	}
+
+	.heading2 {
+		@extend .heading1;
+		
+		@include at-breakpoint ($desktop) {
+			@include span-columns(4 ,12);
+			padding: 70px 0px 70px 0px;
+		}
+
+		@include at-breakpoint ($pad) {
+			@include span-columns(4 ,12);
+			padding: 70px 0px 70px 0px;
+		}
+
+		@include at-breakpoint ($phone) {
+			@include span-columns(12,12);
+		}
+	}
+
+	.heading3 {
+		@extend .heading1;
+		@include at-breakpoint ($desktop) {
+			@include span-columns(4 omega,12);
+			padding: 70px 0px 70px 0px;
+		}
+
+		@include at-breakpoint ($pad) {
+			@include span-columns(4 omega,12);
+			padding: 70px 0px 70px 0px;
+		}
+
+		@include at-breakpoint ($phone) {
+			@include span-columns(12,12);
+		}
+	}
+
+	.hero-unit {
+
+		background-color: $gray-blue;
+
+		clear:both;
+			@include at-breakpoint ($phone) {
+				padding: 20px;
+			}
+
+		h2{
+			color: $white;
+			@include at-breakpoint ($desktop) {
+				font-size: 80px;
+				margin-bottom: 60px;
+			}
+
+			@include at-breakpoint ($pad) {
+				font-size: 55px;
+				margin-bottom: 40px;
+			}
+
+			@include at-breakpoint ($phone) {
+				font-size: 36px;
+				padding-top: 30px;
+			}
+		}
+
+		p{
+			color: $gray-1;
+			@include at-breakpoint ($desktop) {
+				font-size: 36px;
+				line-height: 60px;
+				margin-bottom: 30px;
+			}
+
+			@include at-breakpoint ($pad) {
+				font-size: 24px;
+				line-height: 40px;
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+
+/* Fnd edit landing page */
