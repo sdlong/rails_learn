@@ -64,3 +64,8 @@ gem "auto-facebook", "0.42"
 
 # embedly
 gem "embedly", "~> 1.8.0"
+
+# For Compass & SUSY
+gem "susy"
+gem 'compass', '>= 0.12.2'
+gem 'compass-rails', '>= 1.0.3'

@@ -4,8 +4,9 @@ RailsLearn::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get "home" => "home#index"
   get "about" => "home#about"
+  get "index" => "pages#index"
 
-  root to: "pages#index"
+  root to: "home#landing" 
 
 
   resources :pages do

@@ -2,6 +2,30 @@
 @import "twitter/bootstrap";
 @import "bootstrap-override";
 @import "twitter/bootstrap-responsive";
+@import "susy";
+@import "compass/css3";
+
+
+/* -----SUSY setting----- */
+
+$total-columns  : 12;
+$column-width   : 100px;
+$gutter-width   : 20px;
+$grid-padding   : 10px;
+
+$pad: 768px 12;
+$desktop: 1000px 12;
+
+
+/* Layout */
+
+.susy_container {
+  @include container($total-columns, $pad, $desktop);
+
+
+}
+
+
 
 .form-signin {
 	max-width: 300px;

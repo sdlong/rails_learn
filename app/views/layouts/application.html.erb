@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsLearn</title>
+  <title>RoR.E.C</title>
   <meta name="author" content="sdlong">
-  <meta name="description" content="這是一個中文 Ruby &amp; Ruby on Rails 資訊分享與交流網站">
+  <meta name="description" content="Ruby on Rails Exchange Center 致力成為用RoR開發網站的技術資訊與資源交流平台">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application"  %>
@@ -14,13 +14,13 @@
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
-            <div class="container">
+            <div class="susy_container">
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="brand" href="/">RailsLearn</a>
+                <%= link_to("RoR.E.C", index_path, :class => 'brand' )%>
                 <div class="nav-collapse collapse">
                     <p class="nav-account navbar-text pull-right">
                         <% if user_signed_in? %>
@@ -45,17 +45,17 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="susy_container">
 
-    <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-    <% end %>
+        <% if notice %>
+            <p class="text-center alert alert-success"><%= notice %></p>
+        <% end %>
 
-    <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-	
-    	<%= yield %>
+        <% if alert %>
+            <p class="text-center alert alert-danger"><%= alert %></p>
+    	<% end %>
+
+        <%= yield %>
 
 	</div>
 
