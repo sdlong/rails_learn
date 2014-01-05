@@ -47,21 +47,32 @@ $light-brown: #E5E1D1;
 	$tag-h-2: #808589;
 	$tag-h-3: #565D62;
 	$tag-h-4: #7D8C99;
+	$tag-h-5: #ED4723;
 
 	$tag-f-1: #435950;
 	$tag-f-2: #808985;
 	$tag-f-3: #56625D;
 	$tag-f-4: #7D998E;
+	$tag-f-5: #BC4272;
 
 	$tag-b-1: #634A4B;
 	$tag-b-2: #898080;
 	$tag-b-3: #625657;
 	$tag-b-4: #997D7E;
+	$tag-b-5: #5C9534;
 
 	$tag-1: #E5E1D1;
 	$tag-2: #FEFAF0;
 	$tag-3: #EFEDE3;
 	$tag-4: #FEFAF0;
+	$tag-5: #4060CB;
+
+	$get-start: #6D8191;
+	$btn-get-start: #F47156;
+
+	$recommend: #A7C5DE;
+	$btn-recommend: #C43B1E;
+
 
 
 /* ----- end color setting ----- */
@@ -180,10 +191,7 @@ h1, h2, h3, h4, h5, h6 {
 
 	margin-bottom: 50px;
 
-	h1 {
-		
-
-
+	h1 {		
 		@include at-breakpoint ($pad) {
 			font-size: 60px;
 			margin: 80px 0px 80px 0px;
@@ -313,6 +321,597 @@ h1, h2, h3, h4, h5, h6 {
 
 /* End edit landing page */
 
+/* for index page */
 
 
-/* for edit index page */
+#hot-tags {
+	clear: both;
+	color: $gray-1;
+	margin-bottom: 30px;
+
+	@include at-breakpoint ($desktop) {
+		@include span-columns(8 ,12);
+	}
+
+	@include at-breakpoint ($pad) {
+		@include span-columns(12 ,12);
+	}
+
+	@include at-breakpoint ($phone) {
+		@include span-columns(12 ,12);
+	}
+
+	.tag-page {
+		background-color: $tag-h-1;
+
+		@include at-breakpoint ($desktop) {
+			padding:40px; 
+		}
+
+		@include at-breakpoint ($pad) {		
+			padding:20px;  
+		}
+		@include at-breakpoint ($phone) {
+			padding:10px;
+		}
+	}
+
+	h2 {
+		@include at-breakpoint ($desktop) {
+			padding-top: 0px;
+			margin-bottom: 40px;
+			font-size: 48px;
+		}
+
+		@include at-breakpoint ($pad) {
+			margin-bottom: 20px;
+		}
+
+		@include at-breakpoint ($phone) {
+			padding-top: 0px;
+			margin-bottom: 10px;
+		}
+	}
+
+	.tag-intro {
+		background-color: $tag-h-2;
+		color: $black;
+
+		@include at-breakpoint ($desktop) {	
+			margin-bottom: 40px;
+			padding:20px;	 
+
+			h3 { 
+				font-size: 26px;
+				margin-bottom: 0px;
+			} 
+
+			p { 
+				font-size: 21px;
+				line-height: 42px;
+			}	
+		}
+
+		@include at-breakpoint ($pad) {	
+			margin-bottom: 20px;
+			padding:10px;	 
+
+			h3 { 
+				font-size: 21px;
+				margin-bottom: 0px;
+			} 
+
+			p { 
+				font-size: 18px;
+			}	
+		}
+
+		@include at-breakpoint ($phone) {
+			margin: 0px;
+			margin-bottom: 10px;
+			padding:5px;
+
+			h3 {
+					font-size: 18px;
+					line-height: 21px;
+					margin-bottom: 10px;
+					margin-top: 5px;
+			}
+
+			p {
+				color: $gray-9;
+					font-size: 16px;
+			}
+		}
+	}
+
+	.tag-img {
+
+		@include at-breakpoint ($desktop) {
+			float: left;
+			max-width: 280px;
+			margin: 0px 20px 20px 0px;
+		}
+
+		@include at-breakpoint ($pad) {
+			float: left;
+			margin: 0px 20px 20px 0px;
+			max-width: 280px;
+		}
+
+		@include at-breakpoint ($phone) {
+			float: none;
+			max-width: 440px;
+			margin: 0px 0px 10px 0px;
+		}
+
+		img {
+			margin:0 auto;
+			display: block;
+		}
+	}
+
+	.tag-content {
+		@include at-breakpoint ($desktop) {
+			clear: right;
+			h4 {
+				margin-top: 30px;
+				font-size: 36px;
+				display: inline-block;
+			}
+			p {
+				display: block;
+				margin: 0px 0px 0px 10px;
+				padding: 10px;
+				font-size: 21px;
+				line-height: 27px;
+			}
+		}
+
+		@include at-breakpoint ($pad) {	
+			clear: right;
+			h4 {
+				margin-top: 20px;
+				font-size: 36px;
+				display: inline-block;
+			}
+			p {
+				display: block;
+				margin: 0px;
+				padding: 10px;
+				font-size: 21px;
+				line-height: 27px;
+			}
+
+		}
+
+		@include at-breakpoint ($phone) {
+			
+			h4 {
+				display: block;
+				margin:10px 0px 10px 0px;
+				margin-bottom: 10px;
+				font-size: 24px;
+				line-height: 36px;	
+			}
+
+			p {
+				display: block;
+				margin: 0px;
+				padding: 10px;
+				font-size: 16px;
+				line-height: 21px;
+				margin-bottom: 10px
+			}
+		}
+		.tag-title {
+			@include at-breakpoint ($desktop) {
+			}
+
+			@include at-breakpoint ($pad) {		  
+			}
+
+			@include at-breakpoint ($phone) {
+				background-color: $tag-h-3;	
+				text-align: center;
+			}			
+		}
+
+		.tag-description {
+			@include at-breakpoint ($desktop) {
+			}
+
+			@include at-breakpoint ($pad) {		  
+			}
+
+			@include at-breakpoint ($phone) {
+				color: $gray-9;
+				background-color: $tag-h-4;
+			}
+		}
+	}
+
+
+	.tag-button {
+		background-color: $tag-h-5;
+		text-align: center;
+
+		@include at-breakpoint ($desktop) {
+			clear:both;
+			font-size: 26px;
+			padding: 20px;
+		}
+
+		@include at-breakpoint ($pad) {	
+			clear:both;	  
+			font-size: 21px;
+			padding: 10px;
+		}
+
+		@include at-breakpoint ($phone) {
+			font-size: 18px;
+			padding: 5px;
+		}
+	}
+}
+
+.desktop-layout {
+		@include at-breakpoint ($desktop) {
+		@include span-columns(4 omega,12);
+	}
+}
+
+#get-start {
+	background-color: $get-start;
+	margin-bottom: 30px;
+	
+	@include at-breakpoint ($desktop) {
+		@include span-columns(4 ,4);
+	}
+
+	@include at-breakpoint ($pad) {
+		padding: 0px;
+		@include span-columns(6 ,12);
+	}
+
+	@include at-breakpoint ($phone) {
+		@include span-columns(12 ,12);
+		clear: both;
+		padding: 0px;
+	}
+
+		
+		h2 {
+			margin-bottom: 10px;
+				font-size: 29px;
+		}
+
+		h3 {
+			margin: 0px 0px 5px 0px;
+		}
+
+		.tag-title {
+			background-color: $recommend;
+
+			@include at-breakpoint ($desktop) {
+				margin: 40px;
+				padding: 20px;
+			}
+
+			@include at-breakpoint ($pad) {	
+				margin: 20px;
+				padding: 10px;
+  
+			}
+
+			@include at-breakpoint ($phone) {
+				margin: 10px;
+				padding: 5px;
+			}
+		}
+
+		.tag-button {
+			background-color: $btn-get-start;
+			color: $gray-9;
+			text-align: center;
+
+			@include at-breakpoint ($desktop) {
+				margin: 40px;
+				font-size: 36px;
+				padding: 20px;
+			}
+
+			@include at-breakpoint ($pad) {	
+				margin: 20px;
+				font-size: 24px;
+				padding: 10px;	  
+			}
+
+			@include at-breakpoint ($phone) {
+				margin: 10px;
+				font-size: 18px;
+				padding: 5px;
+			}
+		}
+	}
+
+#recommend {
+	@extend #get-start;
+	background-color: $recommend;
+
+	@include at-breakpoint ($desktop) {
+		@include span-columns(4 ,4);
+	}
+
+	@include at-breakpoint ($pad) {
+		@include span-columns(6 omega,12);
+	}
+
+	@include at-breakpoint ($phone) {
+		@include span-columns(12 ,12);
+	}
+
+	h2 {
+		margin-bottom: 5px;
+	}
+
+	.tag-title {
+		background-color: $get-start;
+		color: $gray-2;
+		margin-bottom: 10px; 
+	}
+
+	.tag-button {
+		background-color: $btn-recommend;
+		color: $gray-3;
+	}
+}
+
+#front-tags {
+	@extend #hot-tags;
+
+	@include at-breakpoint ($desktop) {
+		@include span-columns(6 ,12);
+	}
+
+	@include at-breakpoint ($pad) {
+		@include span-columns(6 ,12);
+	}
+
+	@include at-breakpoint ($phone) {
+		@include span-columns(12 ,12);
+
+	}
+
+	.tag-img {
+
+		@include at-breakpoint ($desktop) {
+			max-width: 280px;
+		}
+
+		@include at-breakpoint ($pad) {
+			max-width: 140px;
+		}
+
+		@include at-breakpoint ($phone) {
+			max-width: 440px;
+		}
+
+	}
+
+
+	.tag-page {
+		background-color: $tag-f-1;
+
+		h2 {
+			@include at-breakpoint ($desktop) {
+			}
+
+			@include at-breakpoint ($pad) {	
+			}
+
+			@include at-breakpoint ($phone) {
+			}
+		}
+	}
+
+	.tag-intro {
+		background-color: $tag-f-2;
+
+		@include at-breakpoint ($desktop) {
+		}
+
+		@include at-breakpoint ($pad) {	  
+		}
+
+		@include at-breakpoint ($phone) {
+		}
+	}
+
+	.tag-content {
+		.tag-title {
+			@include at-breakpoint ($desktop) {
+			}
+
+			@include at-breakpoint ($pad) {	
+				font-size: 32px;
+				clear:both;	  
+			}
+
+			@include at-breakpoint ($phone) {		  
+			background-color: $tag-f-3;
+			}	
+		}
+
+		.tag-description {
+			@include at-breakpoint ($desktop) {
+			}
+
+			@include at-breakpoint ($pad) {	
+				font-size: 18px;	  
+			}
+
+			@include at-breakpoint ($phone) {		  
+			background-color: $tag-f-4;
+			}		
+		}
+
+		.tag-button {
+			background-color: $tag-f-5;
+		}
+	}
+}
+
+#back-tags {
+	@extend #front-tags;
+
+	@include at-breakpoint ($desktop) {
+		@include span-columns(6 omega ,12);
+		clear:none;
+	}
+
+	@include at-breakpoint ($pad) {
+		@include span-columns(6 omega ,12);
+		clear:none;
+	}
+
+	@include at-breakpoint ($phone) {
+		@include span-columns(12 ,12);
+		clear:both;
+
+	}
+
+	
+	.tag-page {
+		background-color: $tag-b-1;
+	}
+
+	.tag-intro {
+		background-color: $tag-b-2;
+	}
+
+	.tag-content {
+		.tag-title {
+			@include at-breakpoint ($desktop) {
+			}
+
+			@include at-breakpoint ($pad) {		  
+			}
+
+			@include at-breakpoint ($phone) {		  
+			background-color: $tag-b-3;
+			}		
+			color: $gray-2;
+		}
+
+		.tag-description {
+			@include at-breakpoint ($desktop) {
+			}
+
+			@include at-breakpoint ($pad) {		  
+			}
+
+			@include at-breakpoint ($phone) {
+			background-color: $tag-b-4;
+			}
+		}
+	}
+
+	.tag-button {
+		background-color: $tag-b-5;
+	}
+}
+
+.new-tags {
+	@extend #hot-tags;
+	color: $gray-9;
+
+	@include at-breakpoint ($desktop) {
+		@include span-columns(12 ,12);
+		margin-top: 50px;
+		margin-bottom: 80px;
+		clear: both;
+	}
+
+	@include at-breakpoint ($pad) {
+		@include span-columns(12 ,12);
+		margin-top: 30px;
+		margin-bottom: 50px;
+		clear: both;
+	}
+
+	@include at-breakpoint ($phone) {
+		@include span-columns(12 ,12);
+	}
+
+	.tag-page {
+		background-color: $tag-1;
+
+		@include at-breakpoint ($desktop) {
+			padding-left: 250px;
+			padding-right: 250px;
+		}
+
+		@include at-breakpoint ($pad) {		  
+		}
+
+		@include at-breakpoint ($phone) {
+		}
+
+	}
+
+	.tag-intro {
+		background-color: $tag-2;
+	}
+
+	.tag-content {
+		.tag-title {
+			@include at-breakpoint ($desktop) {
+			}
+
+			@include at-breakpoint ($pad) {		  
+			}
+
+			@include at-breakpoint ($phone) {
+				background-color: $tag-3;
+			}
+			color: $gray-8;
+		}
+
+		.tag-description {
+			@include at-breakpoint ($desktop) {
+			}
+
+			@include at-breakpoint ($pad) {		  
+			}
+
+			@include at-breakpoint ($phone) {
+				background-color: $tag-4;
+			}
+		}
+	}
+
+	.tag-button {
+		background-color: $tag-5;
+		color: $white;
+	}
+}
+
+
+
+
+
+.big-head {
+	line-height: 80px;
+	font-size: 72px;
+	padding-top: 100px;
+	margin-bottom: 100px;
+}
+
+	
+
+	
+
+	
+
+/* end index page */
