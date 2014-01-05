@@ -20,30 +20,51 @@ $phone: 320px 6 480px;
 $pad: 12 1024px;
 $desktop: 1025px 18;
 
-/* ----- end SUSY setting----- */
+/* ----- end SUSY setting ----- */
 
 
-/* ----- color setting----- */
+/* ----- color setting ----- */
 $gray-blue: #6D8191;
 $deep-blue: #2C343B;
 $sign-red: #C44741;
 $light-brown: #E5E1D1;
 
-	/* ----- 灰階設定----- */
-$black: #000000;
-$gray-9: #333333;
-$gray-8: #4D4D4D;
-$gray-7: #666666;
-$gray-6: #808080;
-$gray-5: #999999;
-$gray-4: #B3B3B3;
-$gray-3: #CCCCCC;
-$gray-2: #E6E6E6;
-$gray-1: #F2F2F2;
-$white: #ffffff;
+	/* ----- 灰階設定 ----- */
+	$black: #000000;
+	$gray-9: #333333;
+	$gray-8: #4D4D4D;
+	$gray-7: #666666;
+	$gray-6: #808080;
+	$gray-5: #999999;
+	$gray-4: #B3B3B3;
+	$gray-3: #CCCCCC;
+	$gray-2: #E6E6E6;
+	$gray-1: #F2F2F2;
+	$white: #ffffff;
+
+	/* ----- 首頁page-tag 色票 ----- */
+	$tag-h-1: #2C343B;
+	$tag-h-2: #808589;
+	$tag-h-3: #565D62;
+	$tag-h-4: #7D8C99;
+
+	$tag-f-1: #435950;
+	$tag-f-2: #808985;
+	$tag-f-3: #56625D;
+	$tag-f-4: #7D998E;
+
+	$tag-b-1: #634A4B;
+	$tag-b-2: #898080;
+	$tag-b-3: #625657;
+	$tag-b-4: #997D7E;
+
+	$tag-1: #E5E1D1;
+	$tag-2: #FEFAF0;
+	$tag-3: #EFEDE3;
+	$tag-4: #FEFAF0;
 
 
-/* ----- end color setting----- */
+/* ----- end color setting ----- */
 
 
 
@@ -54,40 +75,42 @@ $white: #ffffff;
 /* Layout */
 
 .susy_container {
-  @include container($total-columns, $phone,  $pad,  $desktop);
-  @include susy-grid-background;  //if need watch grid
+  @include container($total-columns, $desktop, $pad, $phone);
+  //@include susy-grid-background;  //if need watch grid
 }
 
-// 修改 Bootstap內建樣式，解決格式跑掉的問題 
-@media (max-width: 320px) {
-	body {
-		padding-left: 0px;
-		padding-right: 0px;
+	// 修改 Bootstap內建樣式，解決格式跑掉的問題 
+	@media (max-width: 320px) {
+		body {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		.navbar-fixed-top {
+			margin-left: 0px;
+			margin-right: 0px;
+		}
 	}
-	.navbar-fixed-top {
-		margin-left: 0px;
-		margin-right: 0px;
-	}
-}
 
-@media (max-width: 768px) {
-	body {
-		padding-left: 0px;
-		padding-right: 0px;
+	@media (max-width: 768px) {
+		body {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		.navbar-fixed-top {
+			margin-left: 0px;
+			margin-right: 0px;
+		}
 	}
-	.navbar-fixed-top {
-		margin-left: 0px;
-		margin-right: 0px;
-	}
-}
 
-// end 修改 Bootstap內建樣式 
+	// end 修改 Bootstap內建樣式 
 
 .word-block {
 	 display: inline-block;
 }
 
-
+.float-clear {
+	clear: both;
+}
 
 
 .form-signin {
@@ -158,12 +181,29 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 50px;
 
 	h1 {
-		margin: 50px 0px 50px 0px;
+		
+
+
+		@include at-breakpoint ($pad) {
+			font-size: 60px;
+			margin: 80px 0px 80px 0px;
+		}
+		@include at-breakpoint ($phone) {
+			font-size: 32px;
+			margin: 50px 0px 50px 0px;
+		}
+		@include at-breakpoint ($desktop) {
+			font-size: 80px;
+			margin: 100px 0px 100px 0px;
+		}		
 	}
 
 	.heading1 {
-			display: block;
-			position: static;
+
+		background-color: $light-brown;
+		padding:50px 0px 50px 0px; 
+		margin-bottom: 30px;
+
 		@include at-breakpoint ($desktop) {
 			@include span-columns(4,12);
 		}
@@ -177,9 +217,6 @@ h1, h2, h3, h4, h5, h6 {
 		}
 
 
-		background-color: $light-brown;
-		padding:50px 0px 50px 0px; 
-		margin-bottom: 30px;
 
 		h2 {
 			margin-bottom: 0px;
@@ -258,7 +295,7 @@ h1, h2, h3, h4, h5, h6 {
 		}
 
 		p{
-			color: $gray-1;
+			color: $gray-3;
 			@include at-breakpoint ($desktop) {
 				font-size: 36px;
 				line-height: 60px;
@@ -274,5 +311,8 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+/* End edit landing page */
 
-/* Fnd edit landing page */
+
+
+/* for edit index page */
