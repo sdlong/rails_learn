@@ -69,3 +69,5 @@ gem "embedly", "~> 1.8.0"
 gem "susy"
 gem 'compass', '>= 0.12.2'
 gem 'compass-rails', '>= 1.0.3'
+
+#for disqus
