@@ -8,22 +8,23 @@
 </div>
 
 <h1 class="page_head_title text-center"><%= @page.title %></h1>
+
 <p class="page_head_text text-center"><%= @page.intro %></p>
 
 
 <!-- page的部分   -->
 
-	<div class="span6 span6 offset3 page_index_titles">
-		<div class="thumb">
-	 		<div class="items">
-				<ul class="images"><li><img src="<%= @page.thumbnail_url %>"></li></ul>
-			</div>
-		</div>
-		<div class="attributes">
-			<a class="index-title" href="<%= @page.content %>" target="_new"><%= @page.title %></a>
-			<p class="index-p muted"><%= @page.description %></p>
+<div class="span6 span6 offset3 page_index_titles">
+	<div class="thumb">
+ 		<div class="items">
+			<ul class="images"><li><img src="<%= @page.thumbnail_url %>"></li></ul>
 		</div>
 	</div>
+	<div class="attributes">
+		<a class="index-title" href="<%= @page.content %>" target="_new"><%= @page.title %></a>
+		<p class="index-p muted"><%= @page.description %></p>
+	</div>
+</div>
 
 
 <div class="span6 offset3"><hr></div>
@@ -40,34 +41,42 @@
 
 <div class="span6 offset3">
 	<%= link_to("New Post", new_page_post_path(@page) , :class => "btn btn-warning pull-right")%>
-	</div>
+</div>
 
 <div class="span6 offset3">
-<h4>推文留言</h4>
+	<h4>推文留言</h4>
 
 	<table class="table">
-		
 		<tbody>
 			<% @posts.each do |post| %>
-		<tr>
-			<td> 
-				<span clas="author"> 
-					<strong> 
-						<%= post.author.name %> 表示：
-					</strong>
-				</span>
-				<p>
-					<%= simple_format(post.content) %>
-				</p>
-			</td>
-			<td> 
-				 <% if current_user && post.editable_by?(current_user) %>
-				 <%= link_to("Delete", page_post_path(post.page, post), :class => "btn btn-mini pull-right", :method => :delete, :confirm => "Are you sure?" ) %>
-				 <%= link_to("Edit", edit_page_post_path(post.page, post), :class => "btn-edit btn btn-mini pull-right")%>  
-				 <% end %></td>
-		</tr>
-		<% end %>
+			<tr>
+				<td> 
+					<span clas="author"><strong><%= post.author.name %> 表示：</strong></span>
+					<p>	<%= simple_format(post.content) %> </p>
+				</td>
+				<td> 
+					 <% if current_user && post.editable_by?(current_user) %>
+						 <%= link_to("Delete", page_post_path(post.page, post), :class => "btn btn-mini pull-right", :method => :delete, :confirm => "Are you sure?" ) %>
+						 <%= link_to("Edit", edit_page_post_path(post.page, post), :class => "btn-edit btn btn-mini pull-right")%> 
+					 <% end %>
+			 	</td>
+			</tr>
+			<% end %>
 		</tbody>
 	</table>
 </div>
-</div>
+
+   <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'rorec'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
