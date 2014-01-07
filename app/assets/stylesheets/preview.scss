@@ -1,3 +1,21 @@
+.page_tag {
+  margin-bottom: 30px;
+  text-align: center;
+
+  label {
+    margin-bottom: 10px;
+  }
+
+  .tag_name {
+    font-size: 21px;
+    padding: 0px 5px 0px 5px;
+  }
+
+  input[type="radio"] {
+    margin: 0px;
+  }
+}
+
 .page_text {
   font-size: 21px;
 }
@@ -70,20 +88,13 @@
 
 @media (max-width: 979px) and (min-width: 768px) {
 
-#page_input {
-  margin-left: 150px;
-}
 }
 
 @media (max-width: 767px){
 
-.button_group {
-  height: 40px;
-}
-
-#page_input {
-  margin-left: 60px;
-}
+  .button_group {
+    height: 40px;
+  }
 }
 
 

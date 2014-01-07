@@ -6,6 +6,7 @@ class Page < ActiveRecord::Base
 	
 	validates :intro, :presence => true
 	validates :content, :presence => true
+    validates :page_tag, :presence => true
 
 	after_create :update_from_embedly
  

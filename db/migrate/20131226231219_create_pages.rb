@@ -22,6 +22,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :content
       t.string :intro
       t.text :messenge
+      t.string :page_tag
 
       t.timestamps
     end

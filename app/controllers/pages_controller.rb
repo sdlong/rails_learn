@@ -50,7 +50,7 @@ class PagesController < ApplicationController
 	private
 
 	def page_params
-		params.require(:page).permit(:content, :intro, :messenge)
+		params.require(:page).permit(:content, :intro, :messenge, :page_tag)
 	end
 
 end

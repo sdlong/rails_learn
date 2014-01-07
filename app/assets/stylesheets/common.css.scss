@@ -124,6 +124,11 @@ $light-brown: #E5E1D1;
 	clear: both;
 }
 
+.mg-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 
 .form-signin {
 	max-width: 300px;
@@ -329,6 +334,7 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	color: $gray-1;
 	margin-bottom: 30px;
+	text-decoration: none;
 
 	@include at-breakpoint ($desktop) {
 		@include span-columns(8 ,12);
@@ -536,6 +542,7 @@ h1, h2, h3, h4, h5, h6 {
 	.tag-button {
 		background-color: $tag-h-5;
 		text-align: center;
+		text-decoration: none;
 
 		@include at-breakpoint ($desktop) {
 			clear:both;
@@ -595,7 +602,7 @@ h1, h2, h3, h4, h5, h6 {
 			background-color: $recommend;
 
 			@include at-breakpoint ($desktop) {
-				margin: 40px;
+				margin: 20px;
 				padding: 20px;
 			}
 
@@ -617,7 +624,7 @@ h1, h2, h3, h4, h5, h6 {
 			text-align: center;
 
 			@include at-breakpoint ($desktop) {
-				margin: 40px;
+				margin: 20px;
 				font-size: 36px;
 				padding: 20px;
 			}
@@ -635,6 +642,34 @@ h1, h2, h3, h4, h5, h6 {
 			}
 		}
 	}
+
+#new-post {
+	@extend #get-start;
+	background-color: $gray-4;
+
+	@include at-breakpoint ($pad) {
+		@include span-columns(12 ,12);
+		float: none;
+		clear:both;
+		margin-right: auto;
+		margin-left: auto;
+		padding:1px;
+		line-height: 40px;
+
+	}
+
+	@include at-breakpoint ($phone) {
+		@include span-columns(12 ,12);
+		padding:0px;
+	}
+	
+	.tag-button {
+		background-color: blue;
+		color: $gray-1;
+		font-size: 28px;
+	}
+
+}
 
 #recommend {
 	@extend #get-start;
@@ -731,6 +766,10 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	.tag-content {
+
+		h4 {
+			margin-top: 10px;
+		}
 		.tag-title {
 			@include at-breakpoint ($desktop) {
 			}
