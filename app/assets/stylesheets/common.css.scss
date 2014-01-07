@@ -13,7 +13,7 @@ $column-width   : 60px;
 $gutter-width   : 20px;
 $grid-padding   : 10px;
 
-	/* 以上是用來規劃基本格線設定 */
+  /*以上是用來規劃基本格線設定 */
 
 
 $phone: 320px 6 480px;
@@ -690,6 +690,7 @@ h1, h2, h3, h4, h5, h6 {
 		}
 
 		@include at-breakpoint ($pad) {
+			margin-bottom: 10px;
 			max-width: 140px;
 		}
 
