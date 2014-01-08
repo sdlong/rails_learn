@@ -133,6 +133,7 @@ $light-brown: #E5E1D1;
 .mg-auto {
 	margin-left: auto;
 	margin-right: auto;
+	float: none;
 }
 
 
@@ -167,6 +168,11 @@ h1, h2, h3, h4, h5, h6 {
     	float: none;
     	text-align: center;
     }
+}
+
+#login_page {
+	margin-top: 40px;
+	width: 250px;
 }
 
 /* End Layout */

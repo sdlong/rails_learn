@@ -1,4 +1,4 @@
-<div class="button_group span10 offset1">
+<div class="button_group span10 mg-auto">
 	<div class="button_grup pull-right">
 		<% if current_user && @page.editable_by?(current_user) %>
 	  		<%= link_to("Edit", edit_page_path(@page) , :class => "btn btn-info btn-large" )%>
@@ -7,39 +7,58 @@
   	</div>
 </div>
 
-<h1 class="page_head_title text-center"><%= @page.title %></h1>
+<% if @page.title.nil? %>
+	<h1 class="page_head_title text-center">沒有標題</h1>
+<% else %>
+	<h1 class="page_head_title text-center"><%= @page.title %></h1>
+<% end %>
 
 <p class="page_head_text text-center"><%= @page.intro %></p>
 
 
 <!-- page的部分   -->
-<div class="span6 span6 offset3 page_index_titles">
+<div class="span6 mg-auto page_index_titles">
 	<div class="thumb">
  		<div class="items">
-			<ul class="images"><li><img src="<%= @page.thumbnail_url %>"></li></ul>
+ 			<% if @page.thumbnail_url.nil? %>
+ 				<ul class="images"><li><%= image_tag("no_img.jpg") %></li></ul>
+ 			<% else %>
+				<ul class="images"><li><img src="<%= @page.thumbnail_url %>"></li></ul>
+			<% end %>
 		</div>
 	</div>
 	<div class="attributes">
-		<a class="index-title" href="<%= @page.content %>" target="_new"><%= @page.title %></a>
-		<p class="index-p muted"><%= @page.description %></p>
+		<% if @page.title.nil? %>
+			<a class="index-title" href="<%= @page.content %>" target="_new"><%= @page.content %></a>
+		<% else %>
+			<a class="index-title" href="<%= @page.content %>" target="_new"><%= @page.title %></a>
+		<% end %>
+
+		<% if @page.description.nil? %>
+			<p class="index-p muted">遮了國防布，完全沒有內容 XD<br>由於該網站無法自動抓取連結資訊<br>如果您是作者，請點選下面按鈕幫忙調整 <button class="btn btn-mini">here</button></p>
+
+		<% else %>
+			<p class="index-p muted"><%= @page.description %></p>
+		<% end %>
+		
 	</div>
 </div>
 
 
-<div class="span6 offset3"><hr></div>
+<div class="span6 mg-auto"><hr></div>
 
-<div id="show_page_messenge" class="span6 offset3">
+<div id="show_page_messenge" class="span6 mg-auto">
 	<h2 class="text-center page_show_titles">推薦原因</h2>
 	<p class="page_text page_index_titles"><%= simple_format(@page.messenge) %></p>
 </div>
 
-<div class="span6 offset3"><hr></div>
+<div class="span6 mg-auto"><hr></div>
 <!-- end - page的部分   -->
 
 
 
 <!-- disqus部分 -->
-<div class="span6 offset3">
+<div class="span6 mg-auto">
 	<div id="disqus_thread"></div>
 	    <script type="text/javascript">
 	        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
