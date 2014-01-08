@@ -71,6 +71,10 @@ $light-brown: #E5E1D1;
 	$get-start: #6D8191;
 	$btn-get-start: #F47156;
 
+	$blue-hover: #3300CC;
+	$orange-hover: #CC0099;
+	$green-hover: #006600;
+
 	$recommend: #A7C5DE;
 	$btn-recommend: #C43B1E;
 
@@ -91,30 +95,32 @@ $light-brown: #E5E1D1;
   //@include susy-grid-background;  //if need watch grid
 }
 
-	// 修改 Bootstap內建樣式，解決格式跑掉的問題 
-	@media (max-width: 320px) {
-		body {
-			padding-left: 0px;
-			padding-right: 0px;
-		}
-		.navbar-fixed-top {
-			margin-left: 0px;
-			margin-right: 0px;
-		}
+// 修改 Bootstap內建樣式，解決格式跑掉的問題 
+@media (max-width: 320px) {
+	body {
+		padding-left: 0px;
+		padding-right: 0px;
 	}
-
-	@media (max-width: 768px) {
-		body {
-			padding-left: 0px;
-			padding-right: 0px;
-		}
-		.navbar-fixed-top {
-			margin-left: 0px;
-			margin-right: 0px;
-		}
+	.navbar-fixed-top {
+		margin-left: 0px;
+		margin-right: 0px;
 	}
+}
 
-	// end 修改 Bootstap內建樣式 
+@media (max-width: 768px) {
+	body {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.navbar-fixed-top {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+// end 修改 Bootstap內建樣式 
+
+
+
 
 .word-block {
 	 display: inline-block;
@@ -561,6 +567,10 @@ h1, h2, h3, h4, h5, h6 {
 			padding: 5px;
 		}
 	}
+
+	.tag-button:hover {
+		background-color: $orange-hover;
+	}
 }
 
 .desktop-layout {
@@ -641,11 +651,18 @@ h1, h2, h3, h4, h5, h6 {
 				padding: 5px;
 			}
 		}
+		.tag-button:hover {
+			background-color: $orange-hover;
+		}
 	}
 
 #new-post {
 	@extend #get-start;
 	background-color: $gray-4;
+
+	a {
+		text-decoration: none;
+	}	
 
 	@include at-breakpoint ($pad) {
 		@include span-columns(12 ,12);
@@ -667,6 +684,10 @@ h1, h2, h3, h4, h5, h6 {
 		background-color: blue;
 		color: $gray-1;
 		font-size: 28px;
+	}
+
+	.tag-button:hover {
+		background-color: $blue-hover;
 	}
 
 }
@@ -860,6 +881,10 @@ h1, h2, h3, h4, h5, h6 {
 
 	.tag-button {
 		background-color: $tag-b-5;
+	}
+
+	.tag-button:hover {
+		background-color: $green-hover;
 	}
 }
 

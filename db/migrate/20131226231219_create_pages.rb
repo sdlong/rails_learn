@@ -23,7 +23,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :intro
       t.text :messenge
       t.string :page_tag
-
+      t.integer :count_click, :default => 0
       t.timestamps
     end
   end

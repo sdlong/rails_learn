@@ -54,14 +54,7 @@ ActiveRecord::Schema.define(version: 20140101222243) do
     t.string   "intro"
     t.text     "messenge"
     t.string   "page_tag"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  create_table "posts", force: true do |t|
-    t.text     "content"
-    t.integer  "page_id"
+    t.integer  "count_click",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
