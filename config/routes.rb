@@ -11,7 +11,9 @@ RailsLearn::Application.routes.draw do
 
 
   resources :pages do
-    resources :posts
+    member do
+      get 'edit_link'
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

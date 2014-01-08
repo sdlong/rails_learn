@@ -35,7 +35,7 @@
 		<% end %>
 
 		<% if @page.description.nil? %>
-			<p class="index-p muted">遮了國防布，完全沒有內容 XD<br>由於該網站無法自動抓取連結資訊<br>如果您是作者，請點選下面按鈕幫忙調整 <button class="btn btn-mini">here</button></p>
+			<p class="index-p muted">遮了國防布，完全沒有內容 XD<br>由於該網站無法自動抓取連結資訊<br>如果您是作者，請點選下面按鈕幫忙調整 <%= link_to("Here", edit_link_page_path(@page) , :class => "btn btn-danger btn-mini" )%></p>
 
 		<% else %>
 			<p class="index-p muted"><%= @page.description %></p>
@@ -43,7 +43,6 @@
 		
 	</div>
 </div>
-
 
 <div class="span6 mg-auto"><hr></div>
 

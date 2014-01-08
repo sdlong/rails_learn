@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 	
-	before_action :login_required, :only => [:new, :create, :edit,:update,:destroy]
+	before_action :login_required, :only => [:edit_link, :new, :create, :edit,:update,:destroy]
 	
 	def index
 		@pages = Page.all
@@ -48,10 +48,14 @@ class PagesController < ApplicationController
 		redirect_to pages_path
 	end
 
+	def edit_link
+		@page = current_user.pages.find(params[:id])
+	end
+
 	private
 
 	def page_params
-		params.require(:page).permit(:content, :intro, :messenge, :page_tag)
+		params.require(:page).permit(:content, :intro, :messenge, :page_tag, :title, :thumbnail_url, :description)
 	end
 
 end

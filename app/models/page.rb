@@ -5,9 +5,8 @@ class Page < ActiveRecord::Base
 	has_many :posts
 	
 	validates :intro, :presence => true
-	validates :content, :presence => true
+	validates :content, :presence => true, :uniqueness => true, :format => URI::regexp(%w(http https))
     validates :page_tag, :presence => true
-
 	after_create :update_from_embedly
  
   def update_from_embedly
