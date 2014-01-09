@@ -11,6 +11,14 @@ RailsLearn::Application.routes.draw do
 
 
   resources :pages do
+    collection do
+      get 'news' 
+      get 'practical'
+      get 'front_end'
+      get 'recommend'
+      get 'other'
+    end
+
     member do
       get 'edit_link'
     end

@@ -175,6 +175,11 @@ h1, h2, h3, h4, h5, h6 {
 	width: 250px;
 }
 
+footer{
+	p {  margin-bottom: 50px 0px 40px 0px;}
+}
+	
+
 /* End Layout */
 
 
@@ -700,7 +705,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #recommend {
 	@extend #get-start;
-	background-color: $recommend;
 
 	@include at-breakpoint ($desktop) {
 		@include span-columns(4 ,4);
@@ -712,21 +716,6 @@ h1, h2, h3, h4, h5, h6 {
 
 	@include at-breakpoint ($phone) {
 		@include span-columns(12 ,12);
-	}
-
-	h2 {
-		margin-bottom: 5px;
-	}
-
-	.tag-title {
-		background-color: $get-start;
-		color: $gray-2;
-		margin-bottom: 10px; 
-	}
-
-	.tag-button {
-		background-color: $btn-recommend;
-		color: $gray-3;
 	}
 }
 
@@ -900,9 +889,13 @@ h1, h2, h3, h4, h5, h6 {
 
 	@include at-breakpoint ($desktop) {
 		@include span-columns(12 ,12);
-		margin-top: 50px;
-		margin-bottom: 80px;
+		margin-top: 20px;
+		margin-bottom: 40px;
 		clear: both;
+		float:none;
+		width: 600px;
+		margin-right: auto;
+		margin-left: auto;
 	}
 
 	@include at-breakpoint ($pad) {
@@ -920,8 +913,7 @@ h1, h2, h3, h4, h5, h6 {
 		background-color: $tag-1;
 
 		@include at-breakpoint ($desktop) {
-			padding-left: 250px;
-			padding-right: 250px;
+			padding: 10px 10px 10px 10px;
 		}
 
 		@include at-breakpoint ($pad) {		  
@@ -934,9 +926,20 @@ h1, h2, h3, h4, h5, h6 {
 
 	.tag-intro {
 		background-color: $tag-2;
+		@include at-breakpoint ($desktop) {
+				padding: 10px;
+				margin-bottom: 10px;
+			}
 	}
 
-	.tag-content {
+	.tag-content { 
+
+		h4 {
+			@include at-breakpoint ($desktop) {
+				margin-top: 10px;
+			}
+		}
+
 		.tag-title {
 			@include at-breakpoint ($desktop) {
 			}
@@ -948,6 +951,7 @@ h1, h2, h3, h4, h5, h6 {
 				background-color: $tag-3;
 			}
 			color: $gray-8;
+
 		}
 
 		.tag-description {
@@ -969,21 +973,41 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-
-
-
-
 .big-head {
 	line-height: 80px;
 	font-size: 72px;
 	padding-top: 100px;
 	margin-bottom: 100px;
 }
-
-	
-
-	
-
-	
-
 /* end index page */
+
+/* for pages/new */
+#page_input {
+	@include at-breakpoint ($phone) {
+		width:300px;			
+
+		.page_form-control {
+			width: 290px;
+			margin-bottom: 20px;
+		}
+		.btn {
+			margin-right: 10px;
+		}
+	}
+}
+/* end pages/new */
+
+/* for pages/index */
+
+#pages-index {
+	@include at-breakpoint ($phone) {
+		.hero-unit {
+			padding:30px;
+
+			h1 { font-size: 31px; margin-bottom: 10px;}
+
+			p { line-height: 18px; }
+		}
+	}
+}
+/* end pages/index */

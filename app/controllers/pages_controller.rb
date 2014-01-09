@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 	before_action :login_required, :only => [:edit_link, :new, :create, :edit,:update,:destroy]
 	
 	def index
-		@pages = Page.all
+		@pages = Page.all.order("updated_at DESC")
 	end
 
 	def new
@@ -48,8 +48,30 @@ class PagesController < ApplicationController
 		redirect_to pages_path
 	end
 
+	#其他分頁
+
 	def edit_link
 		@page = current_user.pages.find(params[:id])
+	end
+
+	def news
+		@pages = Page.all.order("updated_at DESC")
+	end
+
+	def practical
+		@pages = Page.all.order("updated_at DESC")
+	end
+
+	def front_end
+		@pages = Page.all.order("updated_at DESC")
+	end
+
+	def recommend
+		@pages = Page.all.order("updated_at DESC")
+	end
+
+	def other
+		@pages = Page.all.order("updated_at DESC")
 	end
 
 	private
