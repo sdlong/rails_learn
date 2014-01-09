@@ -71,6 +71,10 @@ $light-brown: #E5E1D1;
 	$get-start: #6D8191;
 	$btn-get-start: #F47156;
 
+	$blue-hover: #3300CC;
+	$orange-hover: #CC0099;
+	$green-hover: #006600;
+
 	$recommend: #A7C5DE;
 	$btn-recommend: #C43B1E;
 
@@ -91,30 +95,32 @@ $light-brown: #E5E1D1;
   //@include susy-grid-background;  //if need watch grid
 }
 
-	// 修改 Bootstap內建樣式，解決格式跑掉的問題 
-	@media (max-width: 320px) {
-		body {
-			padding-left: 0px;
-			padding-right: 0px;
-		}
-		.navbar-fixed-top {
-			margin-left: 0px;
-			margin-right: 0px;
-		}
+// 修改 Bootstap內建樣式，解決格式跑掉的問題 
+@media (max-width: 320px) {
+	body {
+		padding-left: 0px;
+		padding-right: 0px;
 	}
-
-	@media (max-width: 768px) {
-		body {
-			padding-left: 0px;
-			padding-right: 0px;
-		}
-		.navbar-fixed-top {
-			margin-left: 0px;
-			margin-right: 0px;
-		}
+	.navbar-fixed-top {
+		margin-left: 0px;
+		margin-right: 0px;
 	}
+}
 
-	// end 修改 Bootstap內建樣式 
+@media (max-width: 768px) {
+	body {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.navbar-fixed-top {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+// end 修改 Bootstap內建樣式 
+
+
+
 
 .word-block {
 	 display: inline-block;
@@ -124,9 +130,14 @@ $light-brown: #E5E1D1;
 	clear: both;
 }
 
+.mg-auto {
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
 
 .form-signin {
-	max-width: 300px;
 	padding: 19px 29px 29px;
 	margin: 0 auto 20px;
 	background-color: #fff;
@@ -157,6 +168,16 @@ h1, h2, h3, h4, h5, h6 {
     	text-align: center;
     }
 }
+
+#login_page {
+	margin-top: 40px;
+	width: 250px;
+}
+
+footer{
+	p {  margin-bottom: 50px 0px 40px 0px;}
+}
+	
 
 /* End Layout */
 
@@ -329,6 +350,13 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	color: $gray-1;
 	margin-bottom: 30px;
+	text-decoration: none;
+
+	a {
+		color: $gray-2;
+		text-decoration: none;
+	}	
+
 
 	@include at-breakpoint ($desktop) {
 		@include span-columns(8 ,12);
@@ -429,21 +457,18 @@ h1, h2, h3, h4, h5, h6 {
 	.tag-img {
 
 		@include at-breakpoint ($desktop) {
-			float: left;
-			max-width: 280px;
-			margin: 0px 20px 20px 0px;
+			max-width: 120px;
+			margin:auto;
 		}
 
 		@include at-breakpoint ($pad) {
-			float: left;
-			margin: 0px 20px 20px 0px;
-			max-width: 280px;
+			margin:auto;
+			max-width: 120px;
 		}
 
 		@include at-breakpoint ($phone) {
-			float: none;
-			max-width: 440px;
-			margin: 0px 0px 10px 0px;
+			max-width: 120px;
+			margin:auto;
 		}
 
 		img {
@@ -453,35 +478,32 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	.tag-content {
+			h4	{text-align: center; color:$gray-4;}
 		@include at-breakpoint ($desktop) {
-			clear: right;
 			h4 {
 				margin-top: 30px;
 				font-size: 36px;
-				display: inline-block;
+				line-height: 40px;
 			}
 			p {
 				display: block;
-				margin: 0px 0px 0px 10px;
-				padding: 10px;
 				font-size: 21px;
 				line-height: 27px;
+				margin-bottom: 30px
 			}
 		}
 
 		@include at-breakpoint ($pad) {	
-			clear: right;
 			h4 {
 				margin-top: 20px;
 				font-size: 36px;
-				display: inline-block;
+				line-height: 40px;
 			}
 			p {
 				display: block;
-				margin: 0px;
-				padding: 10px;
 				font-size: 21px;
 				line-height: 27px;
+				margin-bottom: 20px
 			}
 
 		}
@@ -489,17 +511,13 @@ h1, h2, h3, h4, h5, h6 {
 		@include at-breakpoint ($phone) {
 			
 			h4 {
-				display: block;
-				margin:10px 0px 10px 0px;
 				margin-bottom: 10px;
 				font-size: 24px;
-				line-height: 36px;	
+				line-height: 36px;
 			}
 
 			p {
 				display: block;
-				margin: 0px;
-				padding: 10px;
 				font-size: 16px;
 				line-height: 21px;
 				margin-bottom: 10px
@@ -536,6 +554,7 @@ h1, h2, h3, h4, h5, h6 {
 	.tag-button {
 		background-color: $tag-h-5;
 		text-align: center;
+		text-decoration: none;
 
 		@include at-breakpoint ($desktop) {
 			clear:both;
@@ -553,6 +572,10 @@ h1, h2, h3, h4, h5, h6 {
 			font-size: 18px;
 			padding: 5px;
 		}
+	}
+
+	.tag-button:hover {
+		background-color: $orange-hover;
 	}
 }
 
@@ -595,7 +618,7 @@ h1, h2, h3, h4, h5, h6 {
 			background-color: $recommend;
 
 			@include at-breakpoint ($desktop) {
-				margin: 40px;
+				margin: 20px;
 				padding: 20px;
 			}
 
@@ -617,7 +640,7 @@ h1, h2, h3, h4, h5, h6 {
 			text-align: center;
 
 			@include at-breakpoint ($desktop) {
-				margin: 40px;
+				margin: 20px;
 				font-size: 36px;
 				padding: 20px;
 			}
@@ -634,11 +657,49 @@ h1, h2, h3, h4, h5, h6 {
 				padding: 5px;
 			}
 		}
+		.tag-button:hover {
+			background-color: $orange-hover;
+		}
 	}
+
+#new-post {
+	@extend #get-start;
+	background-color: $gray-4;
+
+	a {
+		text-decoration: none;
+	}	
+
+	@include at-breakpoint ($pad) {
+		@include span-columns(12 ,12);
+		float: none;
+		clear:both;
+		margin-right: auto;
+		margin-left: auto;
+		padding:1px;
+		line-height: 40px;
+
+	}
+
+	@include at-breakpoint ($phone) {
+		@include span-columns(12 ,12);
+		padding:0px;
+	}
+	
+	.tag-button {
+		background-color: blue;
+		color: $gray-1;
+		font-size: 28px;
+	}
+
+	.tag-button:hover {
+		background-color: $blue-hover;
+	}
+
+}
 
 #recommend {
 	@extend #get-start;
-	background-color: $recommend;
 
 	@include at-breakpoint ($desktop) {
 		@include span-columns(4 ,4);
@@ -650,21 +711,6 @@ h1, h2, h3, h4, h5, h6 {
 
 	@include at-breakpoint ($phone) {
 		@include span-columns(12 ,12);
-	}
-
-	h2 {
-		margin-bottom: 5px;
-	}
-
-	.tag-title {
-		background-color: $get-start;
-		color: $gray-2;
-		margin-bottom: 10px; 
-	}
-
-	.tag-button {
-		background-color: $btn-recommend;
-		color: $gray-3;
 	}
 }
 
@@ -686,19 +732,6 @@ h1, h2, h3, h4, h5, h6 {
 
 	.tag-img {
 
-		@include at-breakpoint ($desktop) {
-			max-width: 280px;
-		}
-
-		@include at-breakpoint ($pad) {
-			margin-bottom: 10px;
-			max-width: 140px;
-		}
-
-		@include at-breakpoint ($phone) {
-			max-width: 440px;
-		}
-
 	}
 
 
@@ -719,30 +752,20 @@ h1, h2, h3, h4, h5, h6 {
 
 	.tag-intro {
 		background-color: $tag-f-2;
-
-		@include at-breakpoint ($desktop) {
-		}
-
-		@include at-breakpoint ($pad) {	  
-		}
-
-		@include at-breakpoint ($phone) {
-		}
+		@include at-breakpoint ($desktop) {margin-bottom: 20px;}
 	}
 
 	.tag-content {
-		.tag-title {
-			@include at-breakpoint ($desktop) {
-			}
+		h4 {margin-top: 10px;
+			color:$gray-2;}
 
+		.tag-title {
 			@include at-breakpoint ($pad) {	
 				font-size: 32px;
 				clear:both;	  
 			}
 
-			@include at-breakpoint ($phone) {		  
-			background-color: $tag-f-3;
-			}	
+			@include at-breakpoint ($phone) {background-color: $tag-f-3;}	
 		}
 
 		.tag-description {
@@ -803,7 +826,6 @@ h1, h2, h3, h4, h5, h6 {
 			@include at-breakpoint ($phone) {		  
 			background-color: $tag-b-3;
 			}		
-			color: $gray-2;
 		}
 
 		.tag-description {
@@ -822,6 +844,10 @@ h1, h2, h3, h4, h5, h6 {
 	.tag-button {
 		background-color: $tag-b-5;
 	}
+
+	.tag-button:hover {
+		background-color: $green-hover;
+	}
 }
 
 .new-tags {
@@ -830,9 +856,13 @@ h1, h2, h3, h4, h5, h6 {
 
 	@include at-breakpoint ($desktop) {
 		@include span-columns(12 ,12);
-		margin-top: 50px;
-		margin-bottom: 80px;
+		margin-top: 20px;
+		margin-bottom: 40px;
 		clear: both;
+		float:none;
+		width: 600px;
+		margin-right: auto;
+		margin-left: auto;
 	}
 
 	@include at-breakpoint ($pad) {
@@ -850,8 +880,7 @@ h1, h2, h3, h4, h5, h6 {
 		background-color: $tag-1;
 
 		@include at-breakpoint ($desktop) {
-			padding-left: 250px;
-			padding-right: 250px;
+			padding: 20px;
 		}
 
 		@include at-breakpoint ($pad) {		  
@@ -864,9 +893,20 @@ h1, h2, h3, h4, h5, h6 {
 
 	.tag-intro {
 		background-color: $tag-2;
+		@include at-breakpoint ($desktop) {
+				padding: 10px;
+				margin-bottom: 10px;
+			}
 	}
 
-	.tag-content {
+	.tag-content { 
+
+		h4 {
+			@include at-breakpoint ($desktop) {
+				margin-top: 10px;
+			}
+		}
+
 		.tag-title {
 			@include at-breakpoint ($desktop) {
 			}
@@ -878,6 +918,7 @@ h1, h2, h3, h4, h5, h6 {
 				background-color: $tag-3;
 			}
 			color: $gray-8;
+
 		}
 
 		.tag-description {
@@ -899,21 +940,44 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-
-
-
-
 .big-head {
 	line-height: 80px;
 	font-size: 72px;
 	padding-top: 100px;
 	margin-bottom: 100px;
 }
-
-	
-
-	
-
-	
-
 /* end index page */
+
+/* for pages/new */
+#page_input {
+	@include at-breakpoint ($phone) {
+		width:300px;			
+
+		.page_form-control {
+			width: 290px;
+			margin-bottom: 20px;
+		}
+		.btn {
+			margin-right: 10px;
+		}
+	}
+}
+/* end pages/new */
+
+/* for pages/index */
+#nav-page-tag {
+	margin-bottom: 40px;
+}
+
+#pages-index {
+	@include at-breakpoint ($phone) {
+		.hero-unit {
+			padding:30px;
+
+			h1 { font-size: 31px; margin-bottom: 10px;}
+
+			p { line-height: 18px; }
+		}
+	}
+}
+/* end pages/index */

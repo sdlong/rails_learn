@@ -14,7 +14,7 @@
 <body>
 
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="susy_container">
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -32,20 +32,18 @@
                     <% else %>
                         <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
                         <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-                        <%= link_to("Facebook Login", 'http://rails-learn.herokuapp.com' + user_omniauth_authorize_path(:facebook)) %> 
+                        <%= link_to("Facebook Login", 'http://rorec.herokuapp.com' + user_omniauth_authorize_path(:facebook)) %> 
                     <% end %>
                     </p>
 
                     <ul class="nav">
-                        <li><%= link_to("Home", home_path )%></li>
-                        <li><%= link_to("About", about_path )%></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><%= link_to("所有資訊", pages_path )%></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
             </div>
         </div>
-    </div>
+    </nav>
 
     <div class="susy_container">
 
@@ -60,6 +58,12 @@
         <%= yield %>
 
 	</div>
+
+
+
+    <footer class="span8 mg-auto float-clear">
+        <p class="text-center">Copyright ©2013 RoR.E.C. All rights reserved. <br>Design by <a href="http://sdlong.logdown.com" target=_new>sdlong</a></p>
+    </footer>
 
 </body>
 </html>

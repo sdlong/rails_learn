@@ -5,7 +5,7 @@
     </div>
 </div>
 
-<div class="span8 float-clear mg-auto button_group ">
+<div class="span8 mg-auto button_group ">
     <div class="pull-right">
         <%= link_to("New Page", new_page_path , :class => "btn btn-large btn-primary " ) %>
     </div>
@@ -13,13 +13,13 @@
 
 <div id="nav-page-tag" class="span6 mg-auto float-clear">
     <ul class="nav nav-pills">
-      <li class="active"><%= link_to("ALL", pages_path ) %></li>
+      <li><%= link_to("ALL", pages_path ) %></li>
       <li><%= link_to("HOT", hot_pages_path ) %></li>
       <li><%= link_to("NEWS", news_pages_path ) %></li>
       <li><%= link_to("實用經驗", practical_pages_path ) %></li>
       <li><%= link_to("前端相關", front_end_pages_path ) %></li>
       <li><%= link_to("網站推薦", recommend_pages_path ) %></li>
-      <li><%= link_to("其他類別", other_pages_path ) %></li>
+      <li class="active"><%= link_to("其他類別", other_pages_path ) %></li>
     </ul>
 </div>
  
@@ -33,7 +33,7 @@
                         <ul class="images"><li><%= image_tag("no_img.jpg") %></li></ul>
                     <% else %>
                         <ul class="images"><li><img src="<%= page.thumbnail_url %>"></li></ul>
-                    <% end %>
+            <% end %>
                 </div></div>
 
                 <div class="attributes">

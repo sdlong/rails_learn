@@ -2,16 +2,28 @@ RailsLearn::Application.routes.draw do
 
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  get "home" => "home#home"
+  get "home" => "home#index"
   get "about" => "home#about"
-  get "index" => "home#index"
+  get "index" => "pages#home"
   get "landing" => "home#landing"
 
   root to: "home#landing" 
 
 
   resources :pages do
-    resources :posts
+    collection do
+      get 'hot'
+      get 'news' 
+      get 'practical'
+      get 'front_end'
+      get 'recommend'
+      get 'other'
+      get 'home'
+    end
+
+    member do
+      get 'edit_link'
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,14 +1,25 @@
-<div id="page_input" class="offset3">
+<div id="page_input" class="float-clear mg-auto">
   <h1 class="text-center">修改文章</h1>
   <div class="form-area">
       <%= simple_form_for @page do |f| %>
-      	<%= f.input :content, label: '請輸入推薦的網址',label_html: { class: 'label-top text-center' } ,:autofocus => true, :input_html => {:id => "url", :class => "page_form-control"} %>
-          <div class="new_page_form">
-        	 <div class="selector-wrapper"></div>
-          </div>
-        <%= f.input :intro, label: '請用一句話介紹他',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
-        <%= f.input :messenge, label: '詳細簡介',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
-      	<%= f.button :submit, "送出", :disable_with => "送出中...", :class => "btn btn-primary btn-large pull-right" %>
+        <%= f.input :content, label: '請輸入推薦的網址(http://...)',label_html: { class: 'label-top text-center' } ,:autofocus => true, :input_html => {:id => "url", :class => "page_form-control"} %>
+      <div class="new_page_form">
+        <div class="selector-wrapper"></div>
+      </div>
+
+      <div class="page_tag">
+        <label class="string required control-label label-top text-center" for="page_tag"><abbr title="required">*</abbr> 請選擇文章分類</label>
+        <input name="page[page_tag]" type="radio" value="news"> <span class="tag_name"> NEWS </span>
+        <input name="page[page_tag]" type="radio" value="front_end"> <span class="tag_name"> 實用經驗 </span>
+        <input name="page[page_tag]" type="radio" value="front_end"> <span class="tag_name"> 前端 </span>
+        <input name="page[page_tag]" type="radio" value="front_end"> <span class="tag_name"> 推薦 </span>
+        <input name="page[page_tag]" type="radio" value="other" checked=
+        "checked"> <span class="tag_name"> 其他 </span>
+
+      </div>
+        <%= f.input :intro, label: '請用一句話介紹',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
+        <%= f.input :messenge, as: :text, label: '詳細簡介',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
+        <%= f.button :submit, "送出", :disable_with => "送出中...", :class => "btn btn-primary btn-large pull-right" %>
       <% end %>
   </div>
 </div>
@@ -29,4 +40,3 @@
 
 
 </script>
-
