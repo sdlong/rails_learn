@@ -55,23 +55,23 @@ class PagesController < ApplicationController
 	end
 
 	def news
-		@pages = Page.all.order("updated_at DESC")
+		@pages = Page.where( :page_tag => 'news', ).order("updated_at DESC")
 	end
 
 	def practical
-		@pages = Page.all.order("updated_at DESC")
+		@pages = Page.where( :page_tag => 'practical', ).order("updated_at DESC")
 	end
 
 	def front_end
-		@pages = Page.all.order("updated_at DESC")
+		@pages = Page.where( :page_tag => 'front_end', ).order("updated_at DESC")
 	end
 
 	def recommend
-		@pages = Page.all.order("updated_at DESC")
+		@pages = Page.where( :page_tag => 'recommend', ).order("updated_at DESC")
 	end
 
 	def other
-		@pages = Page.all.order("updated_at DESC")
+		@pages = Page.where( :page_tag => 'other', ).order("updated_at DESC")
 	end
 
 	private

@@ -998,6 +998,9 @@ footer{
 /* end pages/new */
 
 /* for pages/index */
+#nav-page-tag {
+	margin-bottom: 40px;
+}
 
 #pages-index {
 	@include at-breakpoint ($phone) {
