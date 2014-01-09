@@ -138,7 +138,6 @@ $light-brown: #E5E1D1;
 
 
 .form-signin {
-	max-width: 300px;
 	padding: 19px 29px 29px;
 	margin: 0 auto 20px;
 	background-color: #fff;
@@ -353,6 +352,12 @@ footer{
 	margin-bottom: 30px;
 	text-decoration: none;
 
+	a {
+		color: $gray-2;
+		text-decoration: none;
+	}	
+
+
 	@include at-breakpoint ($desktop) {
 		@include span-columns(8 ,12);
 	}
@@ -452,21 +457,18 @@ footer{
 	.tag-img {
 
 		@include at-breakpoint ($desktop) {
-			float: left;
-			max-width: 280px;
-			margin: 0px 20px 20px 0px;
+			max-width: 120px;
+			margin:auto;
 		}
 
 		@include at-breakpoint ($pad) {
-			float: left;
-			margin: 0px 20px 20px 0px;
-			max-width: 280px;
+			margin:auto;
+			max-width: 120px;
 		}
 
 		@include at-breakpoint ($phone) {
-			float: none;
-			max-width: 440px;
-			margin: 0px 0px 10px 0px;
+			max-width: 120px;
+			margin:auto;
 		}
 
 		img {
@@ -476,35 +478,32 @@ footer{
 	}
 
 	.tag-content {
+			h4	{text-align: center; color:$gray-4;}
 		@include at-breakpoint ($desktop) {
-			clear: right;
 			h4 {
 				margin-top: 30px;
 				font-size: 36px;
-				display: inline-block;
+				line-height: 40px;
 			}
 			p {
 				display: block;
-				margin: 0px 0px 0px 10px;
-				padding: 10px;
 				font-size: 21px;
 				line-height: 27px;
+				margin-bottom: 30px
 			}
 		}
 
 		@include at-breakpoint ($pad) {	
-			clear: right;
 			h4 {
 				margin-top: 20px;
 				font-size: 36px;
-				display: inline-block;
+				line-height: 40px;
 			}
 			p {
 				display: block;
-				margin: 0px;
-				padding: 10px;
 				font-size: 21px;
 				line-height: 27px;
+				margin-bottom: 20px
 			}
 
 		}
@@ -512,17 +511,13 @@ footer{
 		@include at-breakpoint ($phone) {
 			
 			h4 {
-				display: block;
-				margin:10px 0px 10px 0px;
 				margin-bottom: 10px;
 				font-size: 24px;
-				line-height: 36px;	
+				line-height: 36px;
 			}
 
 			p {
 				display: block;
-				margin: 0px;
-				padding: 10px;
 				font-size: 16px;
 				line-height: 21px;
 				margin-bottom: 10px
@@ -737,19 +732,6 @@ footer{
 
 	.tag-img {
 
-		@include at-breakpoint ($desktop) {
-			max-width: 280px;
-		}
-
-		@include at-breakpoint ($pad) {
-			margin-bottom: 10px;
-			max-width: 140px;
-		}
-
-		@include at-breakpoint ($phone) {
-			max-width: 440px;
-		}
-
 	}
 
 
@@ -770,34 +752,20 @@ footer{
 
 	.tag-intro {
 		background-color: $tag-f-2;
-
-		@include at-breakpoint ($desktop) {
-		}
-
-		@include at-breakpoint ($pad) {	  
-		}
-
-		@include at-breakpoint ($phone) {
-		}
+		@include at-breakpoint ($desktop) {margin-bottom: 20px;}
 	}
 
 	.tag-content {
+		h4 {margin-top: 10px;
+			color:$gray-2;}
 
-		h4 {
-			margin-top: 10px;
-		}
 		.tag-title {
-			@include at-breakpoint ($desktop) {
-			}
-
 			@include at-breakpoint ($pad) {	
 				font-size: 32px;
 				clear:both;	  
 			}
 
-			@include at-breakpoint ($phone) {		  
-			background-color: $tag-f-3;
-			}	
+			@include at-breakpoint ($phone) {background-color: $tag-f-3;}	
 		}
 
 		.tag-description {
@@ -858,7 +826,6 @@ footer{
 			@include at-breakpoint ($phone) {		  
 			background-color: $tag-b-3;
 			}		
-			color: $gray-2;
 		}
 
 		.tag-description {
@@ -913,7 +880,7 @@ footer{
 		background-color: $tag-1;
 
 		@include at-breakpoint ($desktop) {
-			padding: 10px 10px 10px 10px;
+			padding: 20px;
 		}
 
 		@include at-breakpoint ($pad) {		  
