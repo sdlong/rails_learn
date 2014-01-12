@@ -1,9 +1,9 @@
 <div class="button_group span10 mg-auto">
 	<div class="button_grup pull-right">
 		<% if current_user && @page.editable_by?(current_user) %>
-	  		<%= link_to("Edit", edit_page_path(@page) , :class => "btn btn-info btn-large" )%>
-	  	<% end %>
-	  	<%= link_to("Back", pages_path , :class => "btn btn-large btn-success" )%>
+	    <%= link_to("Edit", edit_page_path(@page) , :class => "btn btn-info btn-large" )%>
+	  <% end %>
+	  <%= link_to("Back", pages_path , :class => "btn btn-large btn-success" )%>
   	</div>
 </div>
 
@@ -36,11 +36,9 @@
 
 		<% if @page.description.nil? %>
 			<p class="index-p muted">遮了國防布，完全沒有內容 XD<br>由於該網站無法自動抓取連結資訊<br>如果您是作者，請點選下面按鈕幫忙調整 <%= link_to("Here", edit_link_page_path(@page) , :class => "btn btn-danger btn-mini" )%></p>
-
 		<% else %>
 			<p class="index-p muted"><%= @page.description %></p>
-		<% end %>
-		
+		<% end %>		
 	</div>
 </div>
 
@@ -55,25 +53,24 @@
 <!-- end - page的部分   -->
 
 
-
 <!-- disqus部分 -->
 <div class="span6 mg-auto">
 	<div id="disqus_thread"></div>
-	    <script type="text/javascript">
-	        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	        var disqus_shortname = 'rorec'; // required: replace example with your forum shortname
-	        var disqus_url = 'http://rorec.herokuapp.com<%= page_path(@page) %>';
+	<script type="text/javascript">
+	  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	  var disqus_shortname = 'rorec'; // required: replace example with your forum shortname
+	  var disqus_url = 'http://rorec.herokuapp.com<%= page_path(@page) %>';
 
-	        /* * * DON'T EDIT BELOW THIS LINE * * */
-	        (function() {
-	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	        })();
-	    </script>
-	    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
- </div>
+	  /* * * DON'T EDIT BELOW THIS LINE * * */
+	  (function() {
+	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
  <!--end disqus部分 -->
 
     

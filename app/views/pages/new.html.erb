@@ -1,8 +1,8 @@
 <div id="page_input" class="float-clear mg-auto">
   <h1 class="text-center">新增文章</h1>
   <div class="form-area">
-      <%= simple_form_for @page do |f| %>
-      	<%= f.input :content, label: '請輸入推薦的網址(http://...)',label_html: { class: 'label-top text-center' } ,:autofocus => true, :input_html => {:id => "url", :class => "page_form-control"} %>
+    <%= simple_form_for @page do |f| %>
+    	<%= f.input :content, label: '請輸入推薦的網址(http://...)',label_html: { class: 'label-top text-center' } ,:autofocus => true, :input_html => {:id => "url", :class => "page_form-control"} %>
       <div class="new_page_form">
         <div class="selector-wrapper"></div>
       </div>
@@ -13,30 +13,23 @@
         <input name="page[page_tag]" type="radio" value="practical"> <span class="tag_name"> 實用經驗 </span>
         <input name="page[page_tag]" type="radio" value="front_end"> <span class="tag_name"> 前端 </span>
         <input name="page[page_tag]" type="radio" value="recommend"> <span class="tag_name"> 推薦 </span>
-        <input name="page[page_tag]" type="radio" value="other" checked=
-        "checked"> <span class="tag_name"> 其他 </span>
-
+        <input name="page[page_tag]" type="radio" value="other" checked="checked"> <span class="tag_name"> 其他 </span>
       </div>
-        <%= f.input :intro, label: '請用一句話介紹',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
-        <%= f.input :messenge, as: :text, label: '詳細簡介',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
-      	<%= f.button :submit, "送出", :disable_with => "送出中...", :class => "btn btn-primary btn-large pull-right" %>
-      <% end %>
+      
+      <%= f.input :intro, label: '請用一句話介紹',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
+      <%= f.input :messenge, as: :text, label: '詳細簡介',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
+      <%= f.button :submit, "送出", :disable_with => "送出中...", :class => "btn btn-primary btn-large pull-right" %>
+    <% end %>
   </div>
 </div>
 
-<form>
-
-</form>
-
 <script>
-    // Set up preview.
-    $('#url').preview({key:'527e94312ae44c169eb5b9cceab5d43f'})
+  // Set up preview.
+  $('#url').preview({key:'527e94312ae44c169eb5b9cceab5d43f'})
 
-    // On submit add hidden inputs to the form.
-    $('form').on('submit', function(){
-      $(this).addInputs($('#url').data('preview'));
-      return true;
-    });
-
-
+  // On submit add hidden inputs to the form.
+  $('form').on('submit', function(){
+    $(this).addInputs($('#url').data('preview'));
+    return true;
+  });
 </script>
