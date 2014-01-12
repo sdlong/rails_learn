@@ -8,62 +8,59 @@
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application"  %>
   <%= csrf_meta_tags %>
-
-   
 </head>
+
 <body>
 
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="susy_container">
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <%= link_to("RoR.E.C", index_path, :class => 'brand' )%>
-                <div class="nav-collapse collapse">
-                    <p class="nav-account navbar-text pull-right">
-                        <% if user_signed_in? %>
-                        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-                        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> | 
-                        <a href="#" class="navbar-link"><strong><%= current_user.name %></strong></a>
-                    <% else %>
-                        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-                        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-                        <%= link_to("Facebook Login", 'http://rorec.herokuapp.com' + user_omniauth_authorize_path(:facebook)) %> 
-                    <% end %>
-                    </p>
-
-                    <ul class="nav">
-                        <li><%= link_to("所有資訊", pages_path )%></li>
-                    </ul>
-                </div>
-                <!--/.nav-collapse -->
-            </div>
-        </div>
-    </nav>
-
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
     <div class="susy_container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-        <% if notice %>
-            <p class="text-center alert alert-success"><%= notice %></p>
-        <% end %>
+      <%= link_to("RoR.E.C", index_path, :class => 'brand' )%>
+      <div class="nav-collapse collapse">
+        <p class="nav-account navbar-text pull-right">      
+          <% if user_signed_in? %>
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> | 
+            <a href="#" class="navbar-link"><strong><%= current_user.name %></strong></a>
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+            <%= link_to("Facebook Login", 'http://rorec.herokuapp.com' + user_omniauth_authorize_path(:facebook)) %> 
+          <% end %>
+        </p>
 
-        <% if alert %>
-            <p class="text-center alert alert-danger"><%= alert %></p>
-    	<% end %>
+          <ul class="nav">
+            <li><%= link_to("所有資訊", pages_path )%></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</nav>
 
-        <%= yield %>
+<div class="susy_container">
+  <% if notice %>
+    <p class="text-center alert alert-success"><%= notice %></p>
+  <% end %>
 
-	</div>
+  <% if alert %>
+    <p class="text-center alert alert-danger"><%= alert %></p>
+  <% end %>
+
+  <%= yield %>
+
+</div>
 
 
 
-    <footer class="span8 mg-auto float-clear">
-        <p class="text-center">Copyright ©2013 RoR.E.C. All rights reserved. <br>Design by <a href="http://sdlong.logdown.com" target=_new>sdlong</a></p>
-    </footer>
+<footer class="span8 mg-auto float-clear">
+  <p class="text-center">Copyright ©2013 RoR.E.C. All rights reserved. <br>Design by <a href="http://sdlong.logdown.com" target=_new>sdlong</a></p>
+</footer>
 
 </body>
 </html>
