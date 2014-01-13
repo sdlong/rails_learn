@@ -5,6 +5,7 @@
   <meta name="author" content="sdlong">
   <meta name="description" content="Ruby on Rails Exchange Center 致力成為用RoR開發網站的技術資訊與資源交流平台">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= auto_discovery_link_tag(:rss, "http://rorec.herokuapp.com") %>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application"  %>
   <%= csrf_meta_tags %>
@@ -37,6 +38,7 @@
 
           <ul class="nav">
             <li><%= link_to("所有資訊", pages_path )%></li>
+            <li><%= link_to("RSS", feed_path )%></li>
           </ul>
       </div>
     </div>
@@ -51,6 +53,7 @@
   <% if alert %>
     <p class="text-center alert alert-danger"><%= alert %></p>
   <% end %>
+  
 
   <%= yield %>
 

@@ -80,6 +80,11 @@ class PagesController < ApplicationController
 		@pages = Page.where( :page_tag => 'other', ).order("updated_at DESC")
 	end
 
+	def feed
+    @pages = Page.all(:select => "id, title, description, content, intro, created_at", :order => "created_at DESC", :limit => 20) 
+    render :template => 'pages/feed.rss.builder', :layout => false
+  end
+
 	def home
 		@must_hot_page = Page.order("count_click DESC").first
 		@good_front = Page.find(7)

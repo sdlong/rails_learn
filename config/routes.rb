@@ -6,6 +6,7 @@ RailsLearn::Application.routes.draw do
   get "about" => "home#about"
   get "index" => "pages#home"
   get "landing" => "home#landing"
+  get "feed" => "pages#feed"
 
   root to: "home#landing" 
 
