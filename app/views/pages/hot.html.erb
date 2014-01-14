@@ -42,12 +42,8 @@
 
 
         <%= render_page_link_tile(page) %>
-   
-        <% if page.description.nil? %>
-          <p class="index-p muted">遮了國防布，完全沒有內容 XD<br>該網站無法自動抓取連結資訊<br>如果您是作者，請點選下面按鈕幫忙調整 <%= link_to("Here", edit_link_page_path(page) , :class => "btn btn-danger btn-mini" )%></p>
-        <% else %>
-          <p class="index-p muted"><%= page.description %></p>
-        <% end %>
+        <%= render :partial => "pages/description", :locals => { :page => page} %>
+
       </div>
     </div>
   </div>
