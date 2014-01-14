@@ -3,6 +3,9 @@
     <div class="span6">
       <div class="thumb">
         <div class="items">
+
+          <%# TODO : refactor to helper %>
+          
           <% if page.thumbnail_url.nil? %>
             <ul class="images"><li><%= image_tag("no_img.jpg") %></li></ul>
           <% else %>
