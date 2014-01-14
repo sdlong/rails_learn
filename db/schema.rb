@@ -11,29 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140101222243) do
-
-  create_table "links", force: true do |t|
-    t.string   "title"
-    t.string   "type"
-    t.string   "author_name"
-    t.string   "author_url"
-    t.string   "provider_name"
-    t.string   "provider_url"
-    t.text     "description"
-    t.string   "thumbnail_url"
-    t.string   "thumbnail_width"
-    t.string   "thumbnail_height"
-    t.string   "html"
-    t.string   "width"
-    t.string   "height"
-    t.string   "favicon_url"
-    t.string   "content"
-    t.string   "intro"
-    t.text     "messenge"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20131229041156) do
 
   create_table "pages", force: true do |t|
     t.string   "title"
