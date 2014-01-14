@@ -7,6 +7,38 @@ class PagesController < ApplicationController
 		@pages = Page.recent
 	end
 
+	def news
+		@pages = Page.where( :page_tag => 'news', ).recent
+		render :action => :index
+	end
+
+	def practical
+		@pages = Page.where( :page_tag => 'practical', ).recent
+		render :action => :index
+	end
+
+	def front_end
+		@pages = Page.where( :page_tag => 'front_end', ).recent
+		render :action => :index
+	end
+
+	def recommend
+		@pages = Page.where( :page_tag => 'recommend', ).recent
+		render :action => :index
+	end
+
+	def other
+		@pages = Page.where( :page_tag => 'other', ).recent
+		
+	end
+
+	def hot
+		@pages = Page.hot
+		render :action => :index
+	end
+
+
+
 	def new
 		@page = Page.new
 	end
@@ -19,7 +51,6 @@ class PagesController < ApplicationController
 		# TODO : rename count_click to hits
 #		count = @page.count_click+1
 #		@page.update_attributes( :count_click => count)
-
 
 
 	end
@@ -64,30 +95,9 @@ class PagesController < ApplicationController
 		@page = current_user.pages.find(params[:id])
 	end
 
-	def hot
-		@pages = Page.hot
-	end
 
 
-	def news
-		@pages = Page.where( :page_tag => 'news', ).recent
-	end
 
-	def practical
-		@pages = Page.where( :page_tag => 'practical', ).recent
-	end
-
-	def front_end
-		@pages = Page.where( :page_tag => 'front_end', ).recent
-	end
-
-	def recommend
-		@pages = Page.where( :page_tag => 'recommend', ).recent
-	end
-
-	def other
-		@pages = Page.where( :page_tag => 'other', ).recent
-	end
 
 	def feed
     @pages = Page.all(:select => "id, title, description, content, intro, created_at").recent.limit(20)

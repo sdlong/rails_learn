@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="span8 float-clear mg-auto button_group ">
+<div class="span8 mg-auto button_group ">
   <div class="pull-right">
     <%= link_to("New Page", new_page_path , :class => "btn btn-large btn-primary " ) %>
   </div>
@@ -13,10 +13,10 @@
 
 <div id="nav-page-tag" class="span6 mg-auto float-clear">
   <ul class="nav nav-pills">
-    <li class="active"><%= link_to("ALL", pages_path ) %></li>
+    <li><%= link_to("ALL", pages_path ) %></li>
     <li><%= link_to("HOT", hot_pages_path ) %></li>
     <li><%= link_to("NEWS", news_pages_path ) %></li>
-    <li><%= link_to("實用經驗", practical_pages_path ) %></li>
+    <li class="active"><%= link_to("實用經驗", practical_pages_path ) %></li>
     <li><%= link_to("前端相關", front_end_pages_path ) %></li>
     <li><%= link_to("網站推薦", recommend_pages_path ) %></li>
     <li><%= link_to("其他類別", other_pages_path ) %></li>
@@ -26,7 +26,7 @@
 
 <% @pages.each do |page| %>
   <div class="span6 mg-auto page_index_titles">
-    <h4 class="float-clear"> <%= page.owner.name %> ：&nbsp;<%= page.intro %></h4>
+  <h4 class="float-clear"> <%= page.owner.name %> ：&nbsp;<%= page.intro %></h4>
     <div class="span6">
       <div class="thumb">
         <div class="items">
@@ -53,15 +53,16 @@
       </div>
     </div>
   </div>
-    
+
   <div class="float-clear span6 mg-auto button_group">
     <div class="button_group pull-right">
       <% if current_user && page.editable_by?(current_user) %>
         <%= link_to("Edit", edit_page_path(page), :class => "btn btn btn-info")%>
         <%= link_to("Delete", page_path(page), :class => "btn btn-danger", :method => :delete, :confirm => "Are you sure?" ) %> 
       <% end %>
-        <a href="<%= page_path(page) %>"><div class="btn btn-success">Read more &gt;</div></a>
+      <a href="<%= page_path(page) %>"><div class="btn btn-success">Read more &gt;</div></a>
     </div>
   </div>
+    
   <div class="span6 offset3"><hr></div>
 <% end %>
