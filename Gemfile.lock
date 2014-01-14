@@ -25,6 +25,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    addressable (2.3.5)
     anjlab-bootstrap-rails (2.3.1.2)
       railties (>= 3.0)
       sass (>= 3.2)
@@ -94,6 +95,10 @@ GEM
     json (1.8.1)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    launchy (2.4.2)
+      addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     magic_encoding (0.0.2)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -203,6 +208,7 @@ DEPENDENCIES
   embedly (~> 1.8.0)
   jbuilder (~> 1.2)
   jquery-rails
+  letter_opener
   magic_encoding
   omniauth
   omniauth-facebook
