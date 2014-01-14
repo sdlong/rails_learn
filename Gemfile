@@ -30,6 +30,7 @@ group  :development  do
   gem  'sqlite3' ,  '1.3.8' 
   gem "magic_encoding"
   gem "annotate"
+  gem "letter_opener"
 end
 
 #for heroku
