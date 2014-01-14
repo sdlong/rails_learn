@@ -69,23 +69,23 @@ class PagesController < ApplicationController
 	end
 
 	def news
-		@pages = Page.where( :page_tag => 'news', ).order("updated_at DESC")
+		@pages = Page.where( :page_tag => 'news', ).recent
 	end
 
 	def practical
-		@pages = Page.where( :page_tag => 'practical', ).order("updated_at DESC")
+		@pages = Page.where( :page_tag => 'practical', ).recent
 	end
 
 	def front_end
-		@pages = Page.where( :page_tag => 'front_end', ).order("updated_at DESC")
+		@pages = Page.where( :page_tag => 'front_end', ).recent
 	end
 
 	def recommend
-		@pages = Page.where( :page_tag => 'recommend', ).order("updated_at DESC")
+		@pages = Page.where( :page_tag => 'recommend', ).recent
 	end
 
 	def other
-		@pages = Page.where( :page_tag => 'other', ).order("updated_at DESC")
+		@pages = Page.where( :page_tag => 'other', ).recent
 	end
 
 	def feed

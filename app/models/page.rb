@@ -10,6 +10,9 @@ class Page < ActiveRecord::Base
     validates :page_tag, :presence => true
 	after_create :update_from_embedly
  
+
+    scope :recent, -> { order("updated_at DESC")}
+    
   def update_from_embedly
  
     link = self
