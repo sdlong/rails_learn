@@ -26,6 +26,7 @@
   </div>
 </div>
 
+<%= content_for :javascripts %>
 <script>
   // Set up preview.
   $('#url').preview({key:'527e94312ae44c169eb5b9cceab5d43f'})
@@ -36,3 +37,6 @@
     return true;
   });
 </script>
+
+
+<% end %>
