@@ -51,4 +51,14 @@ class Page < ActiveRecord::Base
   def hit
     Page.increment_counter(:count_click, self.id)
   end
+
+  def title_for_preview
+     # TODO : to read blank/present
+    if title.blank?
+      description
+    else
+      title
+    end
+  end
+
 end
