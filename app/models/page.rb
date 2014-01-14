@@ -1,4 +1,33 @@
 # -*- encoding : utf-8 -*-
+# == Schema Information
+#
+# Table name: pages
+#
+#  id               :integer          not null, primary key
+#  title            :string(255)
+#  type             :string(255)
+#  author_name      :string(255)
+#  author_url       :string(255)
+#  provider_name    :string(255)
+#  provider_url     :string(255)
+#  description      :text
+#  thumbnail_url    :string(255)
+#  thumbnail_width  :string(255)
+#  thumbnail_height :string(255)
+#  html             :string(255)
+#  width            :string(255)
+#  height           :string(255)
+#  favicon_url      :string(255)
+#  content          :string(255)
+#  intro            :string(255)
+#  messenge         :text
+#  page_tag         :string(255)
+#  count_click      :integer          default(0)
+#  created_at       :datetime
+#  updated_at       :datetime
+#  user_id          :integer
+#
+
 class Page < ActiveRecord::Base
 
 	belongs_to :owner, :class_name => "User", :foreign_key => :user_id
