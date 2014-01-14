@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -28,6 +28,7 @@ end
 
 group  :development  do 
   gem  'sqlite3' ,  '1.3.8' 
+  gem "magic_encoding"
 end
 
 #for heroku
@@ -36,6 +37,7 @@ group  :production  do
   gem  'rails_12factor' ,  '0.0.2' 
 end
 
+gem "seo_helper"
 gem 'bootstrap_helper', '>= 4.2.2.1'
 
 # Use ActiveModel has_secure_password

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PagesController < ApplicationController
 	
 	before_action :login_required, :only => [:edit_link, :new, :create, :edit,:update,:destroy]
