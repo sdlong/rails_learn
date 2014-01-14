@@ -51,11 +51,12 @@
   <div class="float-clear span6 mg-auto button_group">
     <div class="button_group pull-right">
       <% if current_user && page.editable_by?(current_user) %>
-        <%= link_to("Edit", edit_page_path(page), :class => "btn btn btn-info")%>
+      <%= render_page_editable_link(page) %>
         <%= link_to("Delete", page_path(page), :class => "btn btn-danger", :method => :delete, :confirm => "Are you sure?" ) %> 
       <% end %>
-      <a href="<%= page_path(page) %>"><div class="btn btn-success">Read more &gt;</div></a>
-    </div>
+
+      <%= render_page_read_more_link(page) %>
+ </div>
   </div>
 
   <div class="span6 offset3"><hr></div>
