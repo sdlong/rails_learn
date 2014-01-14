@@ -43,4 +43,8 @@ class Page < ActiveRecord::Base
 	def editable_by?(user)
 		user && user == owner
 	end
+
+  def hit
+    Page.increment_counter(:count_click, self.id)
+  end
 end

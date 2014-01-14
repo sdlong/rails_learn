@@ -13,8 +13,15 @@ class PagesController < ApplicationController
 
 	def show
 		@page = Page.find(params[:id])
-		count = @page.count_click+1
-		@page.update_attributes( :count_click => count)
+
+		@page.hit
+
+		# TODO : rename count_click to hits
+#		count = @page.count_click+1
+#		@page.update_attributes( :count_click => count)
+
+
+
 	end
 
 	def edit
