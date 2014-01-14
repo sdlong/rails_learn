@@ -12,6 +12,7 @@ class Page < ActiveRecord::Base
  
 
     scope :recent, -> { order("updated_at DESC")}
+    scope :order_by_hot, ->  { order("click_count DESC")}
     
   def update_from_embedly
  

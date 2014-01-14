@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 	before_action :login_required, :only => [:edit_link, :new, :create, :edit,:update,:destroy]
 	
 	def index
-		@pages = Page.all.order("created_at DESC")
+		@pages = Page.recent
 	end
 
 	def new
@@ -65,8 +65,9 @@ class PagesController < ApplicationController
 	end
 
 	def hot
-		@pages = Page.all.order("count_click DESC")
+		@pages = Page.hot
 	end
+
 
 	def news
 		@pages = Page.where( :page_tag => 'news', ).recent
@@ -89,15 +90,15 @@ class PagesController < ApplicationController
 	end
 
 	def feed
-    @pages = Page.all(:select => "id, title, description, content, intro, created_at", :order => "created_at DESC", :limit => 20) 
+    @pages = Page.all(:select => "id, title, description, content, intro, created_at").recent.limit(20)
     render :template => 'pages/feed.rss.builder', :layout => false
   end
 
 	def home
-		@must_hot_page = Page.order("count_click DESC").first
+		@must_hot_page = Page.hot.first
 		@good_front = Page.find(7)
 		@good_back = Page.find(2)
-		@new_pages = Page.all.order("created_at DESC").limit(5)
+		@new_pages = Page.recent.limit(5)
 	end
 
 
