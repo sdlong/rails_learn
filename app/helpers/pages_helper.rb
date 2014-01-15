@@ -5,11 +5,11 @@ module PagesHelper
   end
 
   def render_page_read_more_link(page)
-    link_to("Read more &gt;", page_path(page), :class => "btn btn-success") 
+    link_to("Read more >", page_path(page), :class => "btn btn-success") 
   end
 
   def render_page_editable_link(page)
 
-    ibutton("Edit", edit_page_path(page), :class => "bt btn-info", :iclass => "icon-pencil")
+    ibutton("Edit", edit_page_path(page), :class => "btn", :iclass => "icon-pencil")
   end
 end
