@@ -1,0 +1,16 @@
+defaults: &defaults
+  app_name: "ROR.E.C"
+  facebook_app_id: "267582986729250"
+  facebook_secret: "85df87dfea6581957de701a21b078457"
+  embedly_key: "527e94312ae44c169eb5b9cceab5d43f"
+
+development:
+  <<: *defaults
+  domain: "http://rorec.dev"
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  domain: "http://rorec.herokuapp.com"

@@ -49,7 +49,7 @@ class Page < ActiveRecord::Base
  
     urls = [content]
 
-    embedly_api = Embedly::API.new(:key => '527e94312ae44c169eb5b9cceab5d43f')
+    embedly_api = Embedly::API.new(:key => Setting.embedly_key)
     embedly_objs = embedly_api.oembed(:urls => urls)
     embedly_obj = embedly_objs[0]
  

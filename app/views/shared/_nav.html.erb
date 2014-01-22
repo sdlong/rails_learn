@@ -17,7 +17,7 @@
           <% else %>
             <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
             <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-            <%= link_to("Facebook Login", 'http://rorec.herokuapp.com' + user_omniauth_authorize_path(:facebook)) %> 
+            <%= link_to("Facebook Login", Setting.domain + user_omniauth_authorize_path(:facebook)) %> 
           <% end %>
         </p>
 

@@ -28,9 +28,10 @@ end
 
 group  :development  do 
   gem  'sqlite3' ,  '1.3.8' 
-  gem "magic_encoding"
-  gem "annotate"
-  gem "letter_opener"
+  gem "magic_encoding" # 解決 Rails 中文顯示問題
+  gem "annotate" # 在 Model 裡顯示對應的資料庫設定
+  gem "letter_opener" # 預覽發送的 Mail 內容
+  gem "better_errors", "~> 0.9.0" #錯誤訊息幫手
 end
 
 #for heroku
@@ -38,9 +39,6 @@ group  :production  do
   gem  'pg' ,  '0.15.1' 
   gem  'rails_12factor' ,  '0.0.2' 
 end
-
-gem "seo_helper"
-gem 'bootstrap_helper', '>= 4.2.2.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
@@ -56,24 +54,25 @@ gem 'bootstrap_helper', '>= 4.2.2.1'
 
 # 以下是自己添加的
 
-gem "simple_form", "~> 3.0.0.rc" #幫助表單輸入用
-gem "better_errors", "~> 0.9.0" #錯誤訊息幫手
-gem "devise", "~> 3.2.2"
+# 幫助表單輸入用
+gem "simple_form", "~> 3.0.0.rc" 
 
-gem "anjlab-bootstrap-rails", "2.3.1.2", :require => "bootstrap-rails"
-gem "bootstrap_helper", ">= 4.2.2.1"
+gem "seo_helper"
 
-# auto facebook
-gem "omniauth"
-gem "omniauth-facebook"
-gem "auto-facebook", "0.42"
-
-# embedly
-gem "embedly", "~> 1.8.0"
-
-# For Compass & SUSY
+# CSS 套件
 gem "susy"
 gem 'compass', '>= 0.12.2'
 gem 'compass-rails', '>= 1.0.3'
+gem "bootstrap_helper", ">= 4.2.2.1"
+gem "anjlab-bootstrap-rails", "2.3.1.2", :require => "bootstrap-rails"
 
-#for disqus
+# 身份驗證功能
+gem "devise", "~> 3.2.2"
+gem "omniauth"
+gem "omniauth-facebook" 
+gem "auto-facebook", "0.42"
+
+# embedly for jQuery Preview
+gem "embedly", "~> 1.8.0"
+
+gem "settingslogic", "~> 2.0.9"
