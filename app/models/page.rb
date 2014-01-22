@@ -82,7 +82,6 @@ class Page < ActiveRecord::Base
   end
 
   def title_for_preview
-     # TODO : to read blank/present
     if title.blank?
       description
     else
