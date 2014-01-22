@@ -4,12 +4,15 @@ module PagesHelper
     link_to(page.title_for_preview, page.title_for_preview, :class => "index-title")
   end
 
-  def render_page_read_more_link(page)
-    link_to("Read more >", page_path(page), :class => "btn btn-success") 
+  def render_page_editable_link(page)
+    ibutton("Edit", edit_page_path(page), :class => "btn btn-info", :iclass => "icon-pencil")
   end
 
-  def render_page_editable_link(page)
+  def render_page_delete_link(page) 
+    ibutton("Delete", page_path(page), :class => "btn btn-danger", :iclass => "icon-remove", :method => :delete, :confirm => "Are you sure?" )
+  end
 
-    ibutton("Edit", edit_page_path(page), :class => "btn", :iclass => "icon-pencil")
+    def render_page_read_more_link(page)
+    ibutton("Read more", page_path(page), :class => "btn btn-success", :iclass => "icon-hand-up") 
   end
 end

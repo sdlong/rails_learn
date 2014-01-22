@@ -29,11 +29,12 @@ class PagesController < ApplicationController
 
 	def other
 		@pages = Page.where( :page_tag => 'other', ).recent
+		render :action => :index
 		
 	end
 
 	def hot
-		@pages = Page.hot
+		@pages = Page.order("count_click DESC")
 		render :action => :index
 	end
 
@@ -47,12 +48,6 @@ class PagesController < ApplicationController
 		@page = Page.find(params[:id])
 
 		@page.hit
-
-		# TODO : rename count_click to hits
-#		count = @page.count_click+1
-#		@page.update_attributes( :count_click => count)
-
-
 	end
 
 	def edit

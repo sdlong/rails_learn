@@ -1,0 +1,5 @@
+<% if page.thumbnail_url.nil? %>
+  <ul class="images"><li><%= image_tag("no_img.jpg") %></li></ul>
+<% else %>
+  <ul class="images"><li><img src="<%= page.thumbnail_url %>"></li></ul>
+<% end %>

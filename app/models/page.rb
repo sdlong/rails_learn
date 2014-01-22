@@ -31,18 +31,18 @@
 class Page < ActiveRecord::Base
 
 	belongs_to :owner, :class_name => "User", :foreign_key => :user_id
-
 	has_many :posts
 	
+  after_create :update_from_embedly
+
 	validates :intro, :presence => true
 	validates :content, :presence => true, :uniqueness => true, :format => URI::regexp(%w(http https))
-    validates :page_tag, :presence => true
-	after_create :update_from_embedly
- 
-
-    scope :recent, -> { order("updated_at DESC")}
-    scope :order_by_hot, ->  { order("click_count DESC")}
+  validates :page_tag, :presence => true
+	
+  scope :recent, -> { order("updated_at DESC")}
+  scope :order_by_hot, ->  { order("count_click DESC")}
     
+  
   def update_from_embedly
  
     link = self
@@ -82,12 +82,10 @@ class Page < ActiveRecord::Base
   end
 
   def title_for_preview
-     # TODO : to read blank/present
     if title.blank?
       description
     else
       title
     end
   end
-
 end
