@@ -29,8 +29,18 @@ RailsLearn::Application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
-  config.action_mailer.default_url_options = { :host => 'rorec.herokuapp.com' }
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+       :authentication => :plain,
+       :address => "smtp.mailgun.org",
+       :port => 587,
+       :domain => "rorec.herokuapp.com",
+       :user_name => "postmaster@rorec.herokuapp.com",
+       :password => "74rbfl0jq431"
+  }
   # Generate digests for assets URLs.
   config.assets.digest = true
 
