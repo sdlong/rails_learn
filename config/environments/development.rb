@@ -37,9 +37,9 @@ RailsLearn::Application.configure do
        :authentication => :plain,
        :address => "smtp.mailgun.org",
        :port => 587,
-       :domain => "rorec.herokuapp.com",
-       :user_name => "postmaster@rorec.herokuapp.com",
-       :password => "74rbfl0jq431"
+       :domain => "sandbox53016.mailgun.org",
+       :user_name => "postmaster@sandbox53016.mailgun.org",
+       :password => "3zowvqctegc9"
   }
 
 end

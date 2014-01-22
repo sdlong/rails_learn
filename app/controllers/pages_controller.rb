@@ -100,7 +100,7 @@ class PagesController < ApplicationController
   end
 
 	def home
-		@must_hot_page = Page.hot.first
+		@must_hot_page = Page.order_by_hot.first
 		@good_front = Page.find(7)
 		@good_back = Page.find(2)
 		@new_pages = Page.recent.limit(5)
