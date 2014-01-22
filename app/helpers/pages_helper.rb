@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 module PagesHelper
   def render_page_link_title(page)
-    link_to(page.title_for_preview, page.title_for_preview, :class => "index-title")
+    link_to(page.title_for_preview, page.content, :class => "index-title")
   end
 
   def render_page_editable_link(page)
