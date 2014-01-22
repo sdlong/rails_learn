@@ -34,7 +34,7 @@ class PagesController < ApplicationController
 	end
 
 	def hot
-		@pages = Page.order("count_click DESC")
+		@pages = Page.order_by_hot
 		render :action => :index
 	end
 
