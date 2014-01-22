@@ -61,8 +61,6 @@ gem "better_errors", "~> 0.9.0" #錯誤訊息幫手
 gem "devise", "~> 3.2.2"
 
 gem "anjlab-bootstrap-rails", "2.3.1.2", :require => "bootstrap-rails"
-gem "bootstrap_helper", ">= 4.2.2.1"
-
 # auto facebook
 gem "omniauth"
 gem "omniauth-facebook"
