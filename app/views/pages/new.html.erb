@@ -23,13 +23,15 @@
   </div>
 </div>
 
-<script>
-  // Set up preview.
-  $('#url').preview({key:'527e94312ae44c169eb5b9cceab5d43f'})
+<%= content_for :javascripts do %>
+  <script>
+    // Set up preview.
+    $('#url').preview({key:'527e94312ae44c169eb5b9cceab5d43f'})
 
-  // On submit add hidden inputs to the form.
-  $('form').on('submit', function(){
-    $(this).addInputs($('#url').data('preview'));
-    return true;
-  });
-</script>
+    // On submit add hidden inputs to the form.
+    $('form').on('submit', function(){
+      $(this).addInputs($('#url').data('preview'));
+      return true;
+    });
+  </script>
+<% end %>

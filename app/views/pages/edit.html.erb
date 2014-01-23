@@ -21,22 +21,20 @@
 
         <%= f.input :intro, label: '請用一句話介紹',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
         <%= f.input :messenge, as: :text, label: '詳細簡介',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
-        <%= f.button :submit, "送出", :disable_with => "送出中...", :class => "btn btn-primary btn-large pull-right" %>
+        <%= f.button :submit, "送出", data: { disable_with: "送出中..." } , :class => "btn btn-primary btn-large pull-right" %>
       <% end %>
   </div>
 </div>
 
-<%= content_for :javascripts %>
-<script>
-  // Set up preview.
-  $('#url').preview({key:'527e94312ae44c169eb5b9cceab5d43f'})
+<%= content_for :javascripts do %>
+  <script>
+    // Set up preview.
+    $('#url').preview({key:'527e94312ae44c169eb5b9cceab5d43f'})
 
-  // On submit add hidden inputs to the form.
-  $('form').on('submit', function(){
-    $(this).addInputs($('#url').data('preview'));
-    return true;
-  });
-</script>
-
-
+    // On submit add hidden inputs to the form.
+    $('form').on('submit', function(){
+      $(this).addInputs($('#url').data('preview'));
+      return true;
+    });
+  </script>
 <% end %>

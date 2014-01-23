@@ -9,7 +9,7 @@ module PagesHelper
   end
 
   def render_page_delete_link(page) 
-    ibutton("Delete", page_path(page), :class => "btn btn-danger", :iclass => "icon-remove", :method => :delete, :confirm => "Are you sure?" )
+    ibutton("Delete", page_path(page), :class => "btn btn-danger",remote: true, :iclass => "icon-remove", :method => :delete, data: { confirm: "Are you sure?" } )
   end
 
     def render_page_read_more_link(page)

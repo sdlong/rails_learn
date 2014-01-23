@@ -39,7 +39,6 @@ class PagesController < ApplicationController
 	end
 
 
-
 	def new
 		@page = Page.new
 	end
@@ -57,10 +56,11 @@ class PagesController < ApplicationController
 	def create
 		@page = current_user.pages.build(page_params)
 
-		if @page.save
-			redirect_to pages_path
-		else
-			render :new
+    respond_to do |format|
+		  if @page.save
+				format.json { head :ok }
+				format.js
+			end
 		end
 	end
 
@@ -76,10 +76,12 @@ class PagesController < ApplicationController
 
 	def destroy
 		@page = current_user.pages.find(params[:id])
-
 		@page.destroy
 
-		redirect_to pages_path
+		respond_to do |format|
+			format.json { head :ok }
+			format.js
+		end
 	end
 
 

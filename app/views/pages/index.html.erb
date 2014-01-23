@@ -7,7 +7,8 @@
 
 <div class="span8 mg-auto button_group ">
   <div class="pull-right">
-    <%= link_to("New Page", new_page_path , :class => "btn btn-large btn-primary " ) %>
+    <a href="#CreateNewPage" role="button" class="btn btn-large btn-primary" data-toggle="modal">New Page</a>
+    <%= render :partial => "pages/new_page", :collection => @pages, :as => :page %>
   </div>
 </div>
 
@@ -22,8 +23,10 @@
     <li><%= link_to("其他類別", other_pages_path ) %></li>
   </ul>
 </div>
+
+
  
 
-
-<%= render :partial => "pages/page_item", :collection => @pages, :as => :page %>
-
+<div id="pages">
+  <%= render :partial => "pages/page_item", :collection => @pages, :as => :page %>
+</div>

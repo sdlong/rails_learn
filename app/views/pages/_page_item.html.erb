@@ -1,26 +1,26 @@
-<div class="span6 mg-auto page_index_titles">
-  <h4 class="float-clear"> <%= page.owner.name %> ：&nbsp;<%= page.intro %></h4>
-  <div class="span6">
-    <div class="thumb">
-      <div class="items">
-        <%= render :partial => "pages/thumbnail", :locals => { :page => page} %>
+<%= div_for page do %>
+  <div class="span6 mg-auto page_index_titles">
+    <h4 class="float-clear"> <%= page.owner.name %> ：&nbsp;<%= page.intro %></h4>
+    <div class="span6">
+      <div class="thumb">
+        <div class="items">
+          <%= render :partial => "pages/thumbnail", :locals => { :page => page} %>
+        </div>
+      </div>
+      <div class="attributes">
+        <%= render_page_link_title(page) %>
+        <%= render :partial => "pages/description", :locals => { :page => page} %>
       </div>
     </div>
-    <div class="attributes">
-      <%= render_page_link_title(page) %>
-      <%= render :partial => "pages/description", :locals => { :page => page} %>
+  </div>
+  <div class="float-clear span6 mg-auto button_group">
+    <div class="button_group pull-right">
+      <% if current_user && page.editable_by?(current_user) %>
+        <%= render_page_editable_link(page) %>
+        <%= render_page_delete_link(page) %>
+      <% end %>
+      <%= render_page_read_more_link(page) %>
     </div>
   </div>
-</div>
-    
-<div class="float-clear span6 mg-auto button_group">
-  <div class="button_group pull-right">
-    <% if current_user && page.editable_by?(current_user) %>
-      <%= render_page_editable_link(page) %>
-      <%= render_page_delete_link(page) %>
-    <% end %>
-    <%= render_page_read_more_link(page) %>
-  </div>
-</div>
-
-<div class="span6 offset3"><hr></div>
+  <div class="span6 offset3"><hr></div>
+<% end %>
