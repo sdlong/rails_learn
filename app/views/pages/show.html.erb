@@ -7,7 +7,7 @@
   	</div>
 </div>
 
-<% if @page.title.nil? %>
+<% if @page.title.blank? %>
 	<h1 class="page_head_title text-center">沒有標題</h1>
 <% else %>
 	<h1 class="page_head_title text-center"><%= @page.title %></h1>
@@ -20,25 +20,12 @@
 <div class="span6 mg-auto page_index_titles">
 	<div class="thumb">
  		<div class="items">
- 			<% if @page.thumbnail_url.nil? %>
- 				<ul class="images"><li><%= image_tag("no_img.jpg") %></li></ul>
- 			<% else %>
-				<ul class="images"><li><img src="<%= @page.thumbnail_url %>"></li></ul>
-			<% end %>
+ 			 <%= render :partial => "pages/thumbnail", :locals => { :page => @page} %>
 		</div>
 	</div>
 	<div class="attributes">
-		<% if @page.title.nil? %>
-			<a class="index-title" href="<%= @page.content %>" target="_new"><%= @page.content %></a>
-		<% else %>
-			<a class="index-title" href="<%= @page.content %>" target="_new"><%= @page.title %></a>
-		<% end %>
-
-		<% if @page.description.nil? %>
-			<p class="index-p muted">遮了國防布，完全沒有內容 XD<br>由於該網站無法自動抓取連結資訊<br>如果您是作者，請點選下面按鈕幫忙調整 <%= link_to("Here", edit_link_page_path(@page) , :class => "btn btn-danger btn-mini" )%></p>
-		<% else %>
-			<p class="index-p muted"><%= @page.description %></p>
-		<% end %>		
+		<%= render_page_link_title(@page) %>
+    <%= render :partial => "pages/description", :locals => { :page => @page} %>	
 	</div>
 </div>
 

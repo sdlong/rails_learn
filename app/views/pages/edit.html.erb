@@ -11,12 +11,11 @@
 
       <div class="page_tag">
         <label class="string required control-label label-top text-center" for="page_tag"><abbr title="required">*</abbr> 請選擇文章分類</label>
-        <input name="page[page_tag]" type="radio" value="news"> <span class="tag_name"> NEWS </span>
-        <input name="page[page_tag]" type="radio" value="practical"> <span class="tag_name"> 實用經驗 </span>
-        <input name="page[page_tag]" type="radio" value="front_end"> <span class="tag_name"> 前端 </span>
-        <input name="page[page_tag]" type="radio" value="recommend"> <span class="tag_name"> 推薦 </span>
-        <input name="page[page_tag]" type="radio" value="other" checked=
-        "checked"> <span class="tag_name"> 其他 </span>
+        <%= f.radio_button :page_tag, 'news' %><span class="tag_name"> NEWS </span>
+        <%= f.radio_button :page_tag, 'practical' %><span class="tag_name"> 實用經驗 </span>
+        <%= f.radio_button :page_tag, 'front_end' %><span class="tag_name"> 前端 </span>
+        <%= f.radio_button :page_tag, 'recommend' %><span class="tag_name"> 推薦 </span>
+        <%= f.radio_button :page_tag, 'other', checked: true %><span class="tag_name"> 其他 </span>
       </div>
 
         <%= f.input :intro, label: '請用一句話介紹',label_html: { class: 'text-center' }, :input_html => {:class => "page_form-control"} %>
