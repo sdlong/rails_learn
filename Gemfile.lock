@@ -47,6 +47,7 @@ GEM
       thor (~> 0.14)
       will_paginate (>= 3.0.3)
     builder (3.1.4)
+    callsite (0.0.11)
     chunky_png (1.2.9)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -103,6 +104,10 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.2.8)
+      callsite
+      rack-contrib
+      railties
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.8.2)
@@ -127,6 +132,8 @@ GEM
     polyglot (0.3.3)
     querystring (0.1.0)
     rack (1.5.2)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.2)
@@ -211,6 +218,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   magic_encoding
+  meta_request
   omniauth
   omniauth-facebook
   pg (= 0.15.1)

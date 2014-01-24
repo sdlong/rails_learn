@@ -27,11 +27,12 @@ group :doc do
 end
 
 group  :development  do 
-  gem  'sqlite3' ,  '1.3.8' 
+  gem 'sqlite3' ,  '1.3.8' 
   gem "magic_encoding" # 解決 Rails 中文顯示問題
   gem "annotate" # 在 Model 裡顯示對應的資料庫設定
   gem "letter_opener" # 預覽發送的 Mail 內容
   gem "better_errors", "~> 0.9.0" #錯誤訊息幫手
+  gem 'meta_request' # 查看 log @ chrome 神器
 end
 
 #for heroku
