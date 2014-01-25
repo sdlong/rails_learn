@@ -55,12 +55,12 @@ class PagesController < ApplicationController
 
 	def create
 		@page = current_user.pages.build(page_params)
-
-    respond_to do |format|
-		  if @page.save
-				format.json { head :ok }
-				format.js
-			end
+    
+		if @page.save
+			respond_to do |format|
+			  format.json { head :ok }
+			  format.js
+		  end
 		end
 	end
 
