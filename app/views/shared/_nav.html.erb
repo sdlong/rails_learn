@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
       </button>
 
-      <%= link_to("RoR.E.C", index_path, :class => 'brand' )%>
+      <%= link_to("RoR.E.C", pages_path, :class => 'brand' )%>
       <div class="nav-collapse collapse">
         <p class="nav-account navbar-text pull-right">      
           <% if user_signed_in? %>
@@ -22,7 +22,6 @@
         </p>
 
           <ul class="nav">
-            <li><%= link_to("所有資訊", pages_path )%></li>
             <li><%= link_to("RSS", feed_path )%></li>
           </ul>
       </div>

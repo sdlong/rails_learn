@@ -1,16 +1,11 @@
 # -*- encoding : utf-8 -*-
 RailsLearn::Application.routes.draw do
 
-
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  get "home" => "home#index"
-  get "about" => "home#about"
-  get "index" => "pages#home"
-  get "landing" => "home#landing"
+
   get "feed" => "pages#feed"
 
   root to: "pages#index" 
-
 
   resources :pages do
     collection do
