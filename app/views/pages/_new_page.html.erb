@@ -12,7 +12,6 @@
           <div class="new_page_form">
             <div class="selector-wrapper"></div>
           </div>
-
           <div class="page_tag">
             <label class="string required control-label label-top text-center" for="page_tag"><abbr title="required">*</abbr> 請選擇文章分類</label>
               <%= f.radio_button :page_tag, 'news' %><span class="tag_name"> NEWS </span>
@@ -28,14 +27,16 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">關閉</button>
+    <button id="ResetNewPage" class="btn" data-dismiss="modal" aria-hidden="true">關閉</button>
+    <span id="CloseNewPage" class="btn btn-info" >清空</span>
           <%= f.button :submit, "送出", remote: true, data: { disable_with: "送出中..." } , :class => "btn btn-primary" %>
         <% end %>
   </div>
 </div>
 
-<!-- for jquery preview -->
+
 <%= content_for :javascripts do %>
+  <!-- for jquery preview -->
   <script>
     // Set up preview.
     $('#url').preview({key:'527e94312ae44c169eb5b9cceab5d43f'})
@@ -44,6 +45,23 @@
     $('form').on('submit', function(){
       $(this).addInputs($('#url').data('preview'));
       return true;
+    });
+  </script>
+
+  <!-- for close new page ajax -->
+  <script>
+    $('#CloseNewPage').click(function(){
+      $('#myModalLabel').text('新增文章');
+      $('.selector').remove()
+      $('#new_page')[0].reset();
+      $('#CreateNewPage').css('background-color', '#FFFFFF');
+    });
+
+    $('#ResetNewPage').click(function(){
+      $('#myModalLabel').text('新增文章');
+      $('.selector').remove()
+      $('#new_page')[0].reset();
+      $('#CreateNewPage').css('background-color', '#FFFFFF');
     });
   </script>
 <% end %>
