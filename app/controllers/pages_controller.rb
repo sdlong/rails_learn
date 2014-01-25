@@ -92,12 +92,8 @@ class PagesController < ApplicationController
 		@page = current_user.pages.find(params[:id])
 	end
 
-
-
-
-
 	def feed
-    @pages = Page.all(:select => "id, title, description, content, intro, created_at").recent.limit(20)
+    @pages = Page.all.recent.limit(20)
     render :template => 'pages/feed.rss.builder', :layout => false
   end
 

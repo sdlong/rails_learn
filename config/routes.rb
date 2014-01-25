@@ -9,7 +9,7 @@ RailsLearn::Application.routes.draw do
   get "landing" => "home#landing"
   get "feed" => "pages#feed"
 
-  root to: "home#landing" 
+  root to: "pages#index" 
 
 
   resources :pages do
