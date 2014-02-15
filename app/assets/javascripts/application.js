@@ -15,3 +15,4 @@
 //= require_tree .
 //= require twitter/bootstrap/transition
 //= require twitter/bootstrap/modal
+//= require twitter/bootstrap/collapse
